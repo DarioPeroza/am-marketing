@@ -1,0 +1,8 @@
+@import url('AppHeader.css');
+@import url('AppContent.css');
+
+.App {
+    position: relative;
+    max-width: 100vw;
+    overflow-y: hidden;
+}

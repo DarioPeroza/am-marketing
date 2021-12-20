@@ -1,0 +1,8 @@
+.App-Header {
+    z-index: 999;
+    position: fixed;
+    width: calc(100vw - var(--default-padding) * 2);
+    color: white;
+    padding: var(--default-padding);
+    background-color: var(--dark-gray);
+}
