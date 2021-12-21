@@ -1,5 +1,5 @@
 import { Component } from "react/cjs/react.production.min";
-class Cover extends Component {
+class Features extends Component {
     render() {
         const {name, firstClass} = this.props
         return (
@@ -20,4 +20,4 @@ class Cover extends Component {
         )
     }
 }
-export default Cover
+export default Features

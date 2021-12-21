@@ -33,7 +33,9 @@
   --dark-gray:  #212529;
   --gray:       #5c5c5c;
   --light-gray: #cccccc;
-  --t-dark-gray:#212529e0;
+  --t-dark-gray:#212529af;
+  --dark:       #101010;
+  --t-dark:     #101010af;
 }
 html {
   font-size: 16pt;
@@ -43,4 +45,8 @@ body {
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+* {
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-duration: .3s;
 }

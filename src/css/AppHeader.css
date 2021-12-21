@@ -4,5 +4,90 @@
     width: calc(100vw - var(--default-padding) * 2);
     color: white;
     padding: var(--default-padding);
+    background-color: var(--dark);
+}
+.Header-Title {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.Header-Title * {
+    align-self: center;
+}
+.Header-Title p {
+    display: none;
+    margin: 0;
+    font-size: .7rem;
+    color: var(--gray);
+    cursor: pointer;
+    transition-duration: .1s;
+}
+.Header-Title p:hover {
+    color: var(--cyan);
+}
+.Header-Title h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+.Header-Menu {
+    height: calc(100vh - var(--default-padding) * 2 - 56px);
+    width: calc(380px - var(--default-padding) * 2);
+    max-width: calc(100vw - var(--default-padding) * 2);
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    right: 0;
     background-color: var(--dark-gray);
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-duration: .3s;
+    padding: var(--default-padding);
+    padding-top: calc(56px + var(--default-padding));
+    overflow: auto;
+}
+.Header-Menu::-webkit-scrollbar {
+    width: var(--default-padding);
+    background-color: var(--dark);
+}
+.Header-Menu::-webkit-scrollbar-thumb {
+    background-color: var(--cyan);
+}
+.Show-Menu-Button {
+    transform: rotate(90deg);
+}
+.Show-Menu-Button:active {
+    color: var(--cyan);
+}
+.Show-Menu-Button:hover {
+    color: var(--cyan);
+}
+.Hide-Menu {
+    right: -380px;
+}
+.Header-Menu-List {
+    list-style: none;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.Header-Menu-List li {
+    padding: calc(var(--default-padding) * .6) var(--default-padding);
+    cursor: pointer;
+    list-style: none;
+    color: white;
+    text-transform: capitalize;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-duration: .2s;
+}
+.Header-Menu-List li:hover {
+    color: var(--cyan);
+    background-color: var(--gray);
+}
+@media (orientation: landscape) and (min-width: 640px) {
+    .App-Header {
+        width: calc(100vw - var(--default-padding) * 4);
+        padding: calc(var(--default-padding) * 1) calc(var(--default-padding) * 2);
+    }
+    .Header-Title p {
+        display: inline;
+    }
 }
