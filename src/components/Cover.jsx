@@ -8,7 +8,7 @@ class Cover extends Component {
                 <div className="Cover-Content">
                     <div className="Cover-Text">
                         <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
-                        <a href="#" className="Cover-Link"><h3>Ver presentación</h3></a>
+                        <a href="#" className="Cover-Link"><h3>Ver presentación <strong>{" <<<"}</strong></h3></a>
                     </div>
                     <div className="Cover-Img">
                         <img src="../img/logo.svg" alt="AM-Marketing-Logo"></img>

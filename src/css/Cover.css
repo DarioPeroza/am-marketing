@@ -36,10 +36,10 @@
     color: white;
     text-transform: capitalize;
     font-family: 'Inter-Medium';
-    letter-spacing: .1rem;
+    letter-spacing: .04rem;
     line-height: 2.6rem;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 .Cover-Title strong{
     color: var(--dark-cyan);
@@ -48,11 +48,13 @@
     color: var(--cyan);
     font-family: 'Inter-Ligth';
     text-decoration: none;
-    border-top: 2px solid white;
+    border-top: 3px solid white;
+    width: 320px;
+    max-width: calc(100vw - var(--default-padding) * 4);
 }
 .Cover-Link h3 {
     margin: 0;
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 .Cover-Img {
     height: 100%;
@@ -101,5 +103,29 @@
         100% {
           margin-left: 60%;
         }
+    }
+}
+@media (orientation: landscape) and (min-width: 640px) and (min-height: 500px) {
+    .Cover-Text {
+        padding-left: calc(var(--default-padding) * 2);
+    }
+    .Cover-Title {
+        font-family: 'Inter-Bold';
+        font-size: 2.4rem;
+        padding: var(--default-padding);
+        padding-bottom: .15rem;
+        margin-bottom: 0;
+        letter-spacing: .1rem;
+        border-left: 3px solid white;
+    }
+    .Cover-Link {
+        border-top: none;
+        padding-left: calc(var(--default-padding) * 3);
+        padding-bottom: var(--default-padding);
+        border-left: 3px solid white;
+    }
+    .Cover-Link h3 {
+        margin-top: 0;
+        cursor: pointer;
     }
 }

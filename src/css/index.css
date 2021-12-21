@@ -10,6 +10,10 @@
   font-family: 'Inter-Ligth';
   src: url('../fonts/Inter-Light.ttf');
 }
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('../fonts/Inter-Bold.ttf');
+}
 /*@font-face {
   font-family: 'Inter';
   src:  url('../fonts/Inter-Black.ttf'),
