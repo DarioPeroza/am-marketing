@@ -17,7 +17,9 @@ class Header extends Component {
         this.setState({showMenu: !this.state.showMenu})
     }
     scrollToSection(position) {
-        this.state.content.scrollTop = position
+        const {content} = this.state
+        content.scrollTop = position
+        this.setState({content})
     }
     showMenu() {
         const {showMenu} = this.state
