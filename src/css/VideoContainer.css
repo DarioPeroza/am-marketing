@@ -1,6 +1,5 @@
 .Video-Container {
     height: 100%;
-    max-height: 100vh;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -8,20 +7,25 @@
     justify-content: flex-start;
     align-items: center;
 }
+.Video-Player-Container {
+    height: 1920px;
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .Video-Player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    max-width: calc(100vw - var(--default-padding) / 2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+    max-height: 80vh;
 }
 .Video-Player video {
-    height: 100%;
-    max-height: 100vh;
-    width: auto;
+    height: 100% !important;
+    width: 100% !important;
 }
 .Video-Controls {
     width: 100%;

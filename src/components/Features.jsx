@@ -28,7 +28,7 @@ class Features extends Component {
         if (position === "landscape") {
             return <VideoContainer src={puertoRico}></VideoContainer>
         } else {
-            return <VideoContainer src={puertoRico}></VideoContainer>
+            return <VideoContainer src={verticalVideo}></VideoContainer>
         }
     }
     render() {
