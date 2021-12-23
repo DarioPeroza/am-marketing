@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     background-image: url('../img/handshake-close-up-of-executives-min.webp');
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,15 +19,16 @@
     position: absolute;
 }
 .Cover-Content {
-    width: calc(100vw - var(--default-padding) * 2);
+    width: calc(100vw - var(--default-padding) * 2.5);
     height: 100vh;
-    padding: 0 var(--default-padding);
+    padding-left: var(--default-padding);
+    padding-right: calc(var(--default-padding) * 1.5);
     position: relative;
     overflow: hidden;
 }
 .Cover-Text {
     height: 100%;
-    width: calc(100% - var(--default-padding) * 2);
+    width: calc(100% - var(--default-padding) * 2.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +52,7 @@
     text-decoration: none;
     border-top: 3px solid white;
     width: 320px;
-    max-width: calc(100vw - var(--default-padding) * 4);
+    max-width: calc(100vw - var(--default-padding) * 4.5);
 }
 .Cover-Link h3 {
     margin: 0;
@@ -69,11 +71,13 @@
 }
 .Cover-Img img:nth-child(1){
     animation: slidein 6s infinite;
+    animation-timing-function: cubic-bezier(.34,.34,.57,.95);
     mix-blend-mode: soft-light;
 }
 .Cover-Img img:nth-child(2){
     animation: slidein 6s infinite;
-    animation-delay: .5s;
+    animation-timing-function: cubic-bezier(.34,.34,.57,.95);
+    animation-delay: .7s;
     mix-blend-mode: overlay;
 }
 @media (orientation: portrait) {
@@ -106,6 +110,10 @@
     }
 }
 @media (orientation: landscape) and (min-width: 640px) and (min-height: 500px) {
+    .Cover-Content {
+        width: calc(100vw - var(--default-padding) * 2.5);
+        padding-right: calc(var(--default-padding) * 1.5);
+    }
     .Cover-Text {
         padding-left: calc(var(--default-padding) * 2);
         width: calc(100% - var(--default-padding) * 4);

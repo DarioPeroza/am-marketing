@@ -9,12 +9,10 @@
     overflow-y: auto;
     scroll-behavior: smooth;
 }
-@media (orientation: landscape) and (min-width: 640px) {
-    .App-Content::-webkit-scrollbar {
-        width: var(--default-padding);
-        background-color: var(--dark-gray);
-    }
-    .App-Content::-webkit-scrollbar-thumb {
-        background-color: var(--cyan);
-    }
+.App-Content::-webkit-scrollbar {
+    width: calc(var(--default-padding) / 2);
+    background-color: var(--dark-gray);
+}
+.App-Content::-webkit-scrollbar-thumb {
+    background-color: var(--cyan);
 }

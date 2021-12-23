@@ -38,7 +38,7 @@
     top: 0;
     right: 0;
     background-color: var(--dark-gray);
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .3s;
     padding: var(--default-padding);
     padding-top: calc(56px + var(--default-padding));
@@ -75,7 +75,7 @@
     list-style: none;
     color: white;
     text-transform: capitalize;
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
 }
 .Header-Menu-List li:hover {

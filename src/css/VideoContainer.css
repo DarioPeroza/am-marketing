@@ -1,0 +1,58 @@
+.Video-Container {
+    height: 100%;
+    max-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Video-Player {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    max-width: calc(100vw - var(--default-padding) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.Video-Player video {
+    height: 100%;
+    max-height: 100vh;
+    width: auto;
+}
+.Video-Controls {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.Video-Control {
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+}
+.Video-Buttons {
+    grid-row: 2/5;
+    grid-column: 1/6;
+}
+.Video-Progress {
+    grid-row: 5/6;
+    grid-column: 1/6;
+}
+.Video-Mute {
+    z-index: 3;
+    grid-row: 4/5;
+    grid-column: 5/6;
+}
+@media (orientation:landscape) and (min-width: 800px) {
+    .Video-Controls:hover {
+        background: var(--t-dark);
+    }
+}

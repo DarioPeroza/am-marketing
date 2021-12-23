@@ -47,6 +47,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-timing-function: cubic-bezier(.34,.34,.57,.95);
   animation-duration: .3s;
 }

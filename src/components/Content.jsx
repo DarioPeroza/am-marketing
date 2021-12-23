@@ -7,7 +7,7 @@ class Content extends Component {
         return (
             <div className="App-Content">
                 <Cover firstClass="Section" name="Inicio"></Cover>
-                <Features firstClass="Section" name="Características"></Features>
+                <Features firstClass="Section" name="Servicios"></Features>
             </div>
         )
     }

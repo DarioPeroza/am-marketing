@@ -18,8 +18,9 @@ class Header extends Component {
     }
     scrollToSection(position) {
         const {content} = this.state
-        content.scrollTop = position
+        content.scrollTop = position - 56
         this.setState({content})
+        this.swichtMenu()
     }
     showMenu() {
         const {showMenu} = this.state

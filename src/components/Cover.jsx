@@ -1,4 +1,6 @@
 import { Component } from "react/cjs/react.production.min";
+import logo from "../img/logo.svg"
+import negativeLogo from "../img/negativeLogo.svg"
 class Cover extends Component {
     render() {
         const {name, firstClass} = this.props
@@ -12,8 +14,8 @@ class Cover extends Component {
                         <a href="https://www.youtube.com/" className="Cover-Link"><h3>Ver presentación <strong>{" <<<"}</strong></h3></a>
                     </div>
                     <div className="Cover-Img">
-                        <img src="../img/logo.svg" alt="AM-Marketing-Logo"></img>
-                        <img src='../img/negativelogo.svg' alt="AM-Marketing-Logo"></img>
+                        <img src={logo} alt="AM-Marketing-Logo"></img>
+                        <img src={negativeLogo} alt="AM-Marketing-Logo"></img>
                     </div>
                 </div>
             </div>

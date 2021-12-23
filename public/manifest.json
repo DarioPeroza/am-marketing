@@ -5,6 +5,10 @@
     {
       "src": "img/logo.svg",
       "type": "image/svg"
+    },
+    {
+      "src": "img/negativeLogo.svg",
+      "type": "image/svg"
     }
   ],
   "start_url": ".",
