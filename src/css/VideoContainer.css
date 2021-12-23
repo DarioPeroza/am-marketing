@@ -24,6 +24,8 @@
     width: auto;
 }
 .Video-Controls {
+    width: 100%;
+    height: 100%;
     z-index: 2;
     position: absolute;
     top: 0;
@@ -34,22 +36,57 @@
     transition-duration: .2s;
 }
 .Video-Control {
-    border: 2px solid white;
     width: 100%;
     height: 100%;
 }
 .Video-Buttons {
     grid-row: 2/5;
     grid-column: 1/6;
-}
-.Video-Progress {
-    grid-row: 5/6;
-    grid-column: 1/6;
+    border: 2px solid white;
 }
 .Video-Mute {
     z-index: 3;
-    grid-row: 4/5;
-    grid-column: 5/6;
+    grid-row: 5/6;
+    grid-column: 4/6;
+    border: 2px solid white;
+}
+/*--------------------------------------------Progress--------------------------------------------*/
+.Video-Progress {
+    grid-row: 5/6;
+    grid-column: 1/6;
+    position: relative;
+    /*opacity: 0;*/
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.Video-Progress *{
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    transition-timing-function: ease-in-out;
+    transition-duration: .1s;
+}
+.Video-Progress-Background {
+    z-index: 1;
+    width: 100%;
+    background: var(--dark);
+}
+.Video-Progress-Loaded {
+    z-index: 2;
+    background: var(--gray);
+}
+.Video-Progress-Status {
+    z-index: 3;
+    background: var(--cyan);
+}
+.Video-Progress-Cursor {
+    z-index: 4;
+    width: 20px;
+    background: white;
+    cursor: pointer;
+}
+.Video-Controls:hover .Video-Progress{
+    opacity: 1;
 }
 @media (orientation:landscape) and (min-width: 800px) {
     .Video-Controls:hover {

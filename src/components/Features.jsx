@@ -3,6 +3,7 @@ import VideoContainer from "./VideoContainer";
 import getWindowPosition from "../helpers/getWindowPosition";
 import horizontalVideo from "../video/pexels-Production-Id 4496268-1.webm"
 import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm"
+import puertoRico from "../video/Dj Goja x John Neo - Puerto Rico (Official Single).mp4"
 
 class Features extends Component {
     constructor(props) {
@@ -25,9 +26,9 @@ class Features extends Component {
     showVideo() {
         const {position} = this.state
         if (position === "landscape") {
-            return <VideoContainer src={horizontalVideo}></VideoContainer>
+            return <VideoContainer src={puertoRico}></VideoContainer>
         } else {
-            return <VideoContainer src={verticalVideo}></VideoContainer>
+            return <VideoContainer src={puertoRico}></VideoContainer>
         }
     }
     render() {
