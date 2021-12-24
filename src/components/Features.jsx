@@ -26,7 +26,7 @@ class Features extends Component {
     showVideo() {
         const {position} = this.state
         if (position === "landscape") {
-            return <VideoContainer src={puertoRico}></VideoContainer>
+            return <VideoContainer src={horizontalVideo}></VideoContainer>
         } else {
             return <VideoContainer src={verticalVideo}></VideoContainer>
         }
