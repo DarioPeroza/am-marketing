@@ -6,7 +6,7 @@ class Content extends Component {
     render() {
         return (
             <div className="App-Content">
-                {/*<Cover firstClass="Section" name="Inicio"></Cover>*/}
+                <Cover firstClass="Section" name="Inicio"></Cover>
                 <Features firstClass="Section" name="Servicios"></Features>
             </div>
         )
