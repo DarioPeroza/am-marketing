@@ -1,9 +1,9 @@
 import { Component } from "react/cjs/react.production.min";
 import VideoContainer from "./VideoContainer";
 import getWindowPosition from "../helpers/getWindowPosition";
-import horizontalVideo from "../video/pexels-Production-Id 4496268-1.webm"
+import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm"
 import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm"
-import puertoRico from "../video/Dj Goja x John Neo - Puerto Rico (Official Single).mp4"
+//import puertoRico from "../video/Dj_Goja_x_John_Neo_Puerto_Rico.mp4"
 
 class Features extends Component {
     constructor(props) {
