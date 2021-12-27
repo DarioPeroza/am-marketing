@@ -19,48 +19,58 @@ class VideoContainer extends Component {
             muted: false,
             currentTime: 0,
             secondsLoaded: 0,
-            duration: 0,
             loadedPercent: 0,
             timePercent: 0,
         }
         this.videoId = `v${id}`
     }
     componentDidMount() {
-        this.setState({duration: this.player.getDuration()})
-        window.addEventListener("resize", () => {
-            this.setState({duration: this.player.getDuration()})
-        }, false)
+        
     }
     componentWillUnmount() {
         clearInterval(this.videoInterval)
     }
     advanceVideo(second) {
         const {currentTime} = this.state
-        this.player.seekTo(currentTime + second)
+        const newTime = currentTime + second
+        this.setState({currentTime: newTime})
+        this.player.seekTo(newTime)
+        this.setPercent()
+    }
+    setPercent() {
+        const duration = this.player.getDuration()
+        const currentTime = this.player.getCurrentTime()
+        const secondsLoaded = this.player.getSecondsLoaded()
+        const loadedPercent = secondsLoaded / duration * 100
+        const timePercent = currentTime / duration * 100
+        this.setState({
+            loadedPercent: isNaN(loadedPercent)? 0: loadedPercent,
+            timePercent: isNaN(timePercent)? 0: timePercent,
+            currentTime,
+            secondsLoaded
+        })
     }
     swichtPlayPause() {
         const {playing} = this.state
         this.setState({playing: !playing})
         if (!playing) {
-            const duration = this.player.getDuration()
             this.videoInterval = setInterval(() => {
-                const currentTime = this.player.getCurrentTime()
-                const secondsLoaded = this.player.getSecondsLoaded()
-                const loadedPercent = secondsLoaded / duration * 100
-                const timePercent = currentTime / duration * 100
-                this.setState({
-                    loadedPercent: isNaN(loadedPercent)? 0: loadedPercent,
-                    timePercent: isNaN(timePercent)? 0: timePercent,
-                    currentTime,
-                    secondsLoaded
-                })
+                this.setPercent()
             },100)
         } else {
             clearInterval(this.videoInterval)
+            clearInterval(this.moveCurrentTime)
         }
     }
     swichtMute() {
         this.setState({muted: !this.state.muted})
+    }
+    moveTime(e) {
+        const newPercent = e.target.value
+        const newTime = newPercent * this.player.getDuration() / 100 < 1? 0: newPercent * this.player.getDuration() / 100;
+        this.player.seekTo(newTime)
+        this.setState({currentTime: newTime})
+        this.setPercent()
     }
     videoProgress() {
         const {loadedPercent, timePercent} = this.state
@@ -68,8 +78,13 @@ class VideoContainer extends Component {
             <div className="Video-Control Video-Progress">
                 <div className="Video-Progress-Background"></div>
                 <div className="Video-Progress-Loaded" style={{width: `${loadedPercent}%`}}></div>
-                <div className="Video-Progress-Status" style={{width: `${timePercent}%`}}></div>
-                <div className="Video-Progress-Cursor" style={{marginLeft: `calc(${timePercent}% - 10px)`}}></div>
+                <div className="Video-Progress-Status-Background" style={{width: `${timePercent}%`}}></div>
+                <input 
+                    type="range"
+                    onChange={e => this.moveTime(e)}
+                    value={timePercent}
+                    className="Video-Progress-Status">
+                </input>
             </div>
         )
     }
