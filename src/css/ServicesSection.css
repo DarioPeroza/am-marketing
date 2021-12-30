@@ -1,5 +1,8 @@
 .ServicesSection {
-    background: #202026;
+    min-height: calc(100vh - 56px);
+}
+.ServicesSection-Container {
+    background: #405060;
     min-height: calc(100vh - 56px);
 }
 .ServicesSection-Content {
@@ -54,6 +57,15 @@
     align-self: center;
 }
 @media (orientation:landscape) and (min-width: 800px) {
+    .ServicesSection {
+        background: url("../img/content/pexels-pixabay-39284.jpg");
+        background-size: cover;
+    }
+    .ServicesSection-Container {
+        background: var(--t-dark);
+        min-height: calc(100vh - 56px);
+        backdrop-filter: blur(6px);
+    }
     .ServicesSection-Service:hover {
         transform: scale(1.1);
         background-color: var(--dark);

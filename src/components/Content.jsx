@@ -4,7 +4,6 @@ import Features from "./Features";
 import SuccessSection from "./SuccessSection";
 import ServicesSection from "./ServicesSection";
 import Clients from "./Clients";
-import ContactInfo from "./ContactInfo";
 import whatsappLogo from "../img/icons/am-icons_Whatsapp.svg"
 
 class Content extends Component {
@@ -34,10 +33,6 @@ class Content extends Component {
                     firstClass="Section" 
                     name="Servicios" 
                     WhatsappSend={(description) => WhatsappSend(description)}
-                />
-                <ContactInfo 
-                    firstClass="Section" 
-                    name="Información de contacto"
                 />
                 <div onClick={() => WhatsappSend("Necesito saber sobre ")} className="WhatsApp-Fixed-Button">
                     <img src={whatsappLogo} alt="Logo de Whatsapp" />

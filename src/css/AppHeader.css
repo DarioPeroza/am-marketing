@@ -44,9 +44,12 @@
     padding: var(--default-padding);
     padding-top: calc(56px + var(--default-padding));
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .Header-Menu::-webkit-scrollbar {
-    width: var(--default-padding);
+    width: calc(var(--default-padding) / 2);
     background-color: var(--dark);
 }
 .Header-Menu::-webkit-scrollbar-thumb {
@@ -82,6 +85,24 @@
 .Header-Menu-List li:hover {
     color: var(--cyan);
     background-color: var(--gray);
+}
+.Header-Menu-Medias-Social {
+    width: 100%;
+    height: 60px;
+    margin: var(--default-padding) 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Header-Menu-Medias-Social a {
+    width: 60px;
+    height: 60px;
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.Header-Menu-Medias-Social a:hover {
+    filter: invert(8%);
+    transform: scale(1.4);
 }
 @media (orientation: landscape) and (min-width: 640px) {
     .App-Header {
