@@ -31,9 +31,9 @@ class App extends Component {
       link.rel = "nooponer"
       link.target = "_blank"
       if (description) {
-        link.href = `https://api.whatsapp.com/send/?phone=584245962051&text=${description.replaceAll(" ", "%20")}`
+        link.href = `https://api.whatsapp.com/send/?phone=584245077692&text=${description.replaceAll(" ", "%20")}`
       } else {
-        link.href = `https://api.whatsapp.com/send/?phone=584245962051&text=Quiero%20contratar%20sus%20servicios%20de%20marketing`
+        link.href = `https://api.whatsapp.com/send/?phone=584245077692&text=Quiero%20contratar%20sus%20servicios%20de%20marketing`
       }
       link.click()
   }

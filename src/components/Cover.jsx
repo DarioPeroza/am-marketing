@@ -1,6 +1,6 @@
 import { Component } from "react";
-import logo from "../img/logo.svg"
-import negativeLogo from "../img/negativeLogo.svg"
+import logo from "../img/logo.svg";
+import negativeLogo from "../img/negativeLogo.svg";
 class Cover extends Component {
     render() {
         const {name, firstClass, WhatsappSend} = this.props
