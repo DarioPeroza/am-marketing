@@ -1,5 +1,9 @@
 @import url('Cover.css');
 @import url('Features.css');
+@import url('SuccessSection.css');
+@import url('ServicesSection.css');
+@import url('Clients.css');
+@import url('ContactInfo.css');
 
 .App-Content {
     width: 100vw;
@@ -15,4 +19,36 @@
 }
 .App-Content::-webkit-scrollbar-thumb {
     background-color: var(--cyan);
+}
+.WhatsApp-Button {
+    background-color: #25D366;
+    font-family: 'Inter-Bold';
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    width: calc( 100% - var(--default-padding) * 2 );
+    height: auto;
+    padding: var(--default-padding);
+    color: var(--dark);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.WhatsApp-Button:hover {
+    color: white;
+}
+.WhatsApp-Fixed-Button {
+    cursor: pointer;
+    z-index: 997;
+    padding: 4px;
+    position: fixed;
+    bottom: var(--default-padding);
+    right: calc(var(--default-padding) * 2.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border: 4px solid white;
+    border-radius: 50%;
 }

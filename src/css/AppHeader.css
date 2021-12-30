@@ -2,6 +2,7 @@
     z-index: 999;
     position: fixed;
     width: calc(100vw - var(--default-padding) * 2);
+    height: calc(56px - var(--default-padding) * 2);
     color: white;
     padding: var(--default-padding);
     background-color: var(--dark);
@@ -37,7 +38,7 @@
     z-index: 998;
     top: 0;
     right: 0;
-    background-color: var(--dark-gray);
+    background-color: var(--dark);
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .3s;
     padding: var(--default-padding);

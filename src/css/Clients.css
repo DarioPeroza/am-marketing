@@ -1,0 +1,86 @@
+.ClientsSection {
+    min-height: calc(100vh - 56px);
+    min-width: 100vw;
+    background-image: url("../img/content/pexels-andrea-piacquadio-3760067.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Client-Card {
+    height: 100%;
+    padding: calc(var(--default-padding) * 2);
+    background: var(--t-light);
+    backdrop-filter: blur(8px);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.Client-Logo {
+    display: none;
+    overflow: hidden;
+    width: 115px;
+    height: 115px;
+    margin: 0;
+    padding: 10px;
+    align-self: center;
+    border-radius: 50%;
+    background-color: var(--dark-gray);
+}
+.Client-Card blockquote {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: var(--dark);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.Client-Card blockquote p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.Client-Card blockquote strong {
+    margin: 4px 0;
+}
+.ClientsCard-Buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ClientsCard-Buttons div img {
+    width: 100px;
+    height: 100px;
+    filter: brightness(.2);
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+    cursor: pointer;
+}
+.ClientsCard-Buttons div:hover img {
+    filter: brightness(0);
+    transform: scale(1.1);
+}
+@media (orientation: landscape) and (max-width: 800px) {
+    .Client-Card {
+        display: flex;
+    }
+}
+@media (orientation: landscape) and (min-width: 800px) {
+    .Client-Card {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+    }
+    .ClientsCard-Buttons {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .ClientsCard-Buttons div img {
+        width: 125px;
+        height: 125px;
+    }
+    .Client-Logo {
+        display: block;
+    }
+}

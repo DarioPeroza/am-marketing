@@ -60,7 +60,7 @@
 }
 @media (orientation:landscape) and (min-width: 800px) {
     .Features-Img {
-        background: url('../img/pexels-kindel-media-7054380.jpg');
+        background: url('../img/content/pexels-kindel-media-7054380.jpg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -89,11 +89,21 @@
 }
 .Features-Main-Content {
     background: var(--dark);
+    overflow-y: auto;
+}
+.Features-Main-Content::-webkit-scrollbar {
+    width: calc(var(--default-padding) / 2);
+    background-color: var(--dark-gray);
+}
+.Features-Main-Content::-webkit-scrollbar-thumb {
+    background-color: var(--cyan);
 }
 .Features-Main-Content h2 {
+    margin: 0;
     color: white;
 }
 .Features-Main-Content p {
+    margin: 10px 0px 20px;
     color: white;
 }
 @media (orientation:landscape) and (min-width: 800px) {

@@ -1,9 +1,10 @@
-import { Component } from "react/cjs/react.production.min";
+import { Component } from "react";
 import logo from "../img/logo.svg"
 import negativeLogo from "../img/negativeLogo.svg"
 class Cover extends Component {
     render() {
-        const {name, firstClass} = this.props
+        const {name, firstClass, WhatsappSend} = this.props
+
         return (
             <div className={`${firstClass} Cover`} data-name={name}>
                 <div className="Background-Cover-Img"></div>
@@ -11,7 +12,7 @@ class Cover extends Component {
                 <div className="Cover-Content">
                     <div className="Cover-Text">
                         <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
-                        <a href="https://www.youtube.com/" className="Cover-Link"><h3>Ver presentación <strong>{" <<<"}</strong></h3></a>
+                        <span onClick={() => WhatsappSend("¿Cómo invierto en resultados?")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
                     </div>
                     <div className="Cover-Img">
                         <img src={logo} alt="AM-Marketing-Logo"></img>

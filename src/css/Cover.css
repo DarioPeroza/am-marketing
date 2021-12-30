@@ -1,16 +1,16 @@
 .Background-Cover-Img {
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/handshake-close-up-of-executives-min.webp');
+    background-image: url('../img/content/handshake-close-up-of-executives-min.webp');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: absolute;
-    z-index: -10;
+    z-index: 1;
 }
 .Background-Cover-Color {
-    z-index: -9;
+    z-index: 2;
     width: 100vw;
     height: 100vh;
     background: var(--t-dark);
@@ -27,6 +27,7 @@
     overflow: hidden;
 }
 .Cover-Text {
+    z-index: 4;
     height: 100%;
     width: calc(100% - var(--default-padding) * 2.5);
     display: flex;
@@ -54,9 +55,11 @@
     width: 320px;
     max-width: calc(100vw - var(--default-padding) * 4.5);
 }
-.Cover-Link h3 {
+.Cover-Link p {
     margin: 0;
     margin-top: .5rem;
+    font-size: 1.2rem;
+    font-family: 'Inter-Medium';
 }
 .Cover-Img {
     height: 100%;
@@ -67,7 +70,7 @@
     position: absolute;
     height: 80vh;
     width: auto;
-    z-index: -8;
+    z-index: 3;
 }
 .Cover-Img img:nth-child(1){
     animation: slidein 6s infinite;
@@ -133,7 +136,7 @@
         padding-bottom: var(--default-padding);
         border-left: 3px solid white;
     }
-    .Cover-Link h3 {
+    .Cover-Link p {
         margin-top: 0;
         cursor: pointer;
     }

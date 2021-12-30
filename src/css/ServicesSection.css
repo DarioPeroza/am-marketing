@@ -1,0 +1,93 @@
+.ServicesSection {
+    background: #202026;
+    min-height: calc(100vh - 56px);
+}
+.ServicesSection-Content {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+}
+.ServicesSection-Title h4 {
+    padding: calc(var(--default-padding) * 2) var(--default-padding);
+    padding-bottom: var(--default-padding);
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'Inter-Medium';
+    color: white;
+    margin: 0;
+}
+.ServicesSection-Service{
+    margin: var(--default-padding);
+    border-radius: 3px;
+    background: #151518;
+    padding: var(--default-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+    cursor: pointer;
+}
+.ServicesSection-Service h3 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'Inter';
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.ServicesSection-Service p {
+    text-align: center;
+    margin: 0;
+    margin-top: .4rem;
+    margin-bottom: calc(var(--default-padding) * 4);
+    font-family: 'Inter-Ligth';
+}
+.ServicesSection-Service img {
+    margin-bottom: calc(var(--default-padding) * 1);
+    margin-top: calc(var(--default-padding) * 2);
+    height: 160px;
+    width: 160px;
+    justify-self: center;
+    align-self: center;
+}
+@media (orientation:landscape) and (min-width: 800px) {
+    .ServicesSection-Service:hover {
+        transform: scale(1.1);
+        background-color: var(--dark);
+    }
+    .ServicesSection-Service:hover p {
+        color: white;
+    }
+    .ServicesSection-Service:hover h3 {
+        color: var(--cyan);
+    }
+    .ServicesSection-Content {
+        min-height: 450px;
+        flex-direction: row;
+    }
+    .ServicesSection-Title h4 {
+        padding-bottom: 0;
+    }
+    .ServicesSection-Service {
+        width: 30%;
+        margin: 0;
+        margin: calc(var(--default-padding) * 2);
+    }
+    .ServicesSection-Service:nth-child(2) {
+        width: 30%;
+        margin: 0;
+        margin: calc(var(--default-padding) * 2) 0;
+    }
+    .ServicesSection-Service p {
+        margin: 0;
+        margin-top: .4rem;
+        margin-bottom: 0;
+    }
+    .ServicesSection-Service img {
+        margin-bottom: calc(var(--default-padding) * 1);
+        margin-top: 0;
+    }
+}

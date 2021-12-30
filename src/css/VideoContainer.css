@@ -7,8 +7,8 @@
     justify-content: flex-start;
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
 }
 .Video-Player-Container {
     height: 100%;
@@ -60,11 +60,9 @@
     mix-blend-mode: hard-light;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
-    opacity: 0;
 }
 .Video-Controls:hover .Video-Buttons {
     transform: scale(1.2);
-    opacity: 1;
 }
 .Video-Controls .Video-Buttons div img{
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
@@ -82,12 +80,6 @@
     max-width: 20vw;
     max-height: 20vw;
     cursor: pointer;
-}
-.Video-Controls .Video-Mute {
-    opacity: 0;
-}
-.Video-Controls:hover .Video-Mute {
-    opacity: 1;
 }
 .Video-Mute {
     z-index: 3;
@@ -119,6 +111,7 @@
     opacity: 0;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
+    width: 100%;
 }
 .Video-Progress *{
     height: 20px;
@@ -142,6 +135,8 @@
     z-index: 3;
     background: var(--cyan);
     height: 20px;
+    transition-timing-function: none;
+    transition-duration: .01s;
 }
 .Video-Progress-Status {
     z-index: 4;
@@ -153,6 +148,8 @@
     margin: 0;
     padding: 0;
     outline: none;
+    transition-timing-function: ease-in-out;
+    transition-duration: .4s;
 }
 .Video-Progress-Status::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -161,6 +158,8 @@
     height: 20px;
     cursor: pointer;
     border-radius: 0;
+    transition-timing-function: ease-in-out;
+    transition-duration: .4s;
 }
 .Video-Controls:hover .Video-Progress{
     opacity: 1;
@@ -170,4 +169,7 @@
         background: var(--t-dark);
         backdrop-filter: blur(8px);
     }
+}
+.Video-Controls-Hide {
+    opacity: 0;
 }

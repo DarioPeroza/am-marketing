@@ -1,9 +1,8 @@
-import { Component } from "react/cjs/react.production.min";
+import { Component } from "react";
 import VideoContainer from "./VideoContainer";
 import getWindowPosition from "../helpers/getWindowPosition";
-import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm"
-import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm"
-//import puertoRico from "../video/Dj_Goja_x_John_Neo_Puerto_Rico.mp4"
+import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm";
+import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm";
 
 class Features extends Component {
     constructor(props) {
@@ -21,18 +20,17 @@ class Features extends Component {
                 position: getWindowPosition()
             })
         })
-         
     }
     showVideo() {
         const {position} = this.state
         if (position === "landscape") {
-            return <VideoContainer src={horizontalVideo}></VideoContainer>
+            return <VideoContainer src={horizontalVideo} containerId="App-Content"></VideoContainer>
         } else {
-            return <VideoContainer src={verticalVideo}></VideoContainer>
+            return <VideoContainer src={verticalVideo} containerId="App-Content"></VideoContainer>
         }
     }
     render() {
-        const {name, firstClass} = this.props
+        const {name, firstClass, WhatsappSend} = this.props
         return (
             <div className={`${firstClass} Features`} data-name={name}>
                 <div className="Features-Title">
@@ -43,8 +41,9 @@ class Features extends Component {
                     {this.showVideo()}
                 </div>
                 <div className="Features-Content Features-Main-Content">
-                    <h2>Perfomance Marketing</h2>
+                    <h2>Marketing de rendimiento</h2>
                     <p>Cada empresa es única y diferente, y en AM Marketing Digital entendemos eso. Es por esto que adaptamos el presupuesto a tus necesidades y objetivos a fin de que obtengas campañas efectivas y rentables.</p>
+                    <div className="WhatsApp-Button" onClick={() => WhatsappSend("Necesito una campaña publicitaria")}>Haz una campaña</div>
                 </div>
                 <div className="Features-Content">
                     <h3>Marketing basado en objetivos</h3>
