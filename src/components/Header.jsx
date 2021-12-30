@@ -37,13 +37,13 @@ class Header extends Component {
                     {menuList}
                 </ul>
                 <div className="Header-Menu-Medias-Social">
-                    <a target="_blank" href="https://www.instagram.com/amservice_web/">
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com/amservice_web/">
                         <img src={instagramLogo} alt="Logo de Instagram" />
                     </a>
-                    <a target="_blank" href="https://www.facebook.com/AMserviceweb/">
+                    <a target="_blank" rel="noopener" href="https://www.facebook.com/AMserviceweb/">
                         <img src={facebookLogo} alt="Logo de Facebook" />
                     </a>
-                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=584245962051&text=Quiero%20contratar%20sus%20servicios%20de%20marketing">
+                    <a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=584245962051&text=Quiero%20contratar%20sus%20servicios%20de%20marketing">
                         <img src={whatsappLogo} alt="Logo de Whatsapp" />
                     </a>
                 </div>

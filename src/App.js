@@ -28,6 +28,7 @@ class App extends Component {
   }
   WhatsappSend(description) {
       const link = document.createElement("a")
+      link.rel = "nooponer"
       link.target = "_blank"
       if (description) {
         link.href = `https://api.whatsapp.com/send/?phone=584245962051&text=${description.replaceAll(" ", "%20")}`
