@@ -1,6 +1,6 @@
 import { Component } from "react";
 import logo from "../img/logo.svg";
-import negativeLogo from "../img/negativeLogo.svg";
+import whiteLogo from "../img/whiteLogo.svg";
 class Cover extends Component {
     render() {
         const {name, firstClass, WhatsappSend} = this.props
@@ -16,7 +16,7 @@ class Cover extends Component {
                     </div>
                     <div className="Cover-Img">
                         <img src={logo} alt="AM-Marketing-Logo"></img>
-                        <img src={negativeLogo} alt="AM-Marketing-Logo"></img>
+                        <img src={whiteLogo} alt="AM-Marketing-Logo"></img>
                     </div>
                 </div>
             </div>
