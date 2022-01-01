@@ -5,17 +5,18 @@ import getSectionsHeight from "./helpers/getSectionsHeight";
 import './css/normalize.css'
 import './css/App.css';
 
+
 class App extends Component {
   constructor(props) {
-      super(props)
-      this.state = {
-          content: {}
-      }
-      this.scrollToSection = this.scrollToSection.bind(this)
+    super(props)
+    this.state = {
+      content: {}
+    }
+    this.scrollToSection = this.scrollToSection.bind(this)
   }
   componentDidMount() {
-      const content = document.querySelector("#App-Content")
-      this.setState({content})
+    const content = document.querySelector("#App-Content")
+    this.setState({content})
   }
   scrollToSection(name) {
     const {content} = this.state

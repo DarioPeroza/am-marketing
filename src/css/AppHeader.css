@@ -86,21 +86,22 @@
     color: var(--cyan);
     background-color: var(--gray);
 }
-.Header-Menu-Medias-Social {
+.Header-Menu-Social-Medias {
     width: 100%;
     height: 60px;
     margin: var(--default-padding) 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 60px;
 }
-.Header-Menu-Medias-Social a {
+.Header-Menu-Social-Medias a {
     width: 60px;
     height: 60px;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
 }
-.Header-Menu-Medias-Social a:hover {
+.Header-Menu-Social-Medias a:hover {
     filter: invert(8%);
     transform: scale(1.4);
 }
@@ -111,5 +112,8 @@
     }
     .Header-Title p {
         display: inline;
+    }
+    .Header-Menu-Social-Medias {
+        margin-bottom: 0;
     }
 }

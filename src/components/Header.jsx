@@ -36,7 +36,7 @@ class Header extends Component {
                 <ul className="Header-Menu-List">
                     {menuList}
                 </ul>
-                <div className="Header-Menu-Medias-Social">
+                <div className="Header-Menu-Social-Medias">
                     <a rel="noreferrer" href="https://www.instagram.com/amservice_web/">
                         <img src={instagramLogo} alt="Logo de Instagram" />
                     </a>

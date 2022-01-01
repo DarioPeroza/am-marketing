@@ -6,18 +6,9 @@
 
 .App-Content {
     width: 100vw;
-    height: 100vh;
     position: relative;
     overflow-x: hidden;
-    overflow-y: auto;
     scroll-behavior: smooth;
-}
-.App-Content::-webkit-scrollbar {
-    width: calc(var(--default-padding) / 2);
-    background-color: var(--dark-gray);
-}
-.App-Content::-webkit-scrollbar-thumb {
-    background-color: var(--cyan);
 }
 .WhatsApp-Button {
     background-color: #25D366;
