@@ -15,7 +15,7 @@ class App extends Component {
     this.scrollToSection = this.scrollToSection.bind(this)
   }
   componentDidMount() {
-    const content = document.querySelector("#App-Content")
+    const content = document.querySelector("html")
     this.setState({content})
   }
   scrollToSection(name) {
@@ -30,12 +30,12 @@ class App extends Component {
   WhatsappSend(description) {
       const link = document.createElement("a")
       link.rel = "nooponer"
-      link.target = "_blank"
-      if (description) {
-        link.href = `https://api.whatsapp.com/send/?phone=584245077692&text=${description.replaceAll(" ", "%20")}`
-      } else {
-        link.href = `https://api.whatsapp.com/send/?phone=584245077692&text=Quiero%20contratar%20sus%20servicios%20de%20marketing`
-      }
+      let web = "web"
+      let text = description? description.replaceAll(" ", "%20"): "Quiero%20contratar%20sus%20servicios%20de%20marketing";
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        web = "api"
+      } 
+      link.href = `https://${web}.whatsapp.com/send/?phone=584245077692&text=${text}`
       link.click()
   }
   render() {

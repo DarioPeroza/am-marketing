@@ -40,10 +40,21 @@
 }
 html {
   font-size: 16pt;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: calc(var(--default-padding) / 2);
+  background-color: var(--dark-gray);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--cyan);
 }
 body {
   margin: 0;
   font-family: 'Inter';
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
