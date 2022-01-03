@@ -7,7 +7,7 @@ import advanceSvg from "../img/icons/am-icons_advance.svg";
 import backSvg from "../img/icons/am-icons_back.svg";
 import volumeSvg from "../img/icons/am-icons_volume.svg";
 import muteSvg from "../img/icons/am-icons_mute.svg";
-import getResponsiveVideoDimension from "../helpers/getResponsiveVideoDimension"
+import getVideoResponsiveDimension from "../helpers/getResponsiveVideoDimension"
 import getWindowPosition from "../helpers/getWindowPosition";
 import "../css/VideoContainer.css";
 
@@ -24,8 +24,8 @@ class VideoContainer extends Component {
             loadedPercent: 0,
             timePercent: 0,
             displayControls: true,
-            height: "100%",
-            width: "auto"
+            videoHeight: "100%",
+            videoWidth: "auto",
         }
         this.videoId = `v${id}`
     }
@@ -34,10 +34,18 @@ class VideoContainer extends Component {
     }
     componentDidMount() {
         this.setVideoDimensions()
+        window.addEventListener("resize", () => {
+            this.setVideoDimensions()
+        })
     }
     setVideoDimensions() {
         const position = getWindowPosition()
-        const container = document.querySelector(".Video-Container")
+        const container = document.querySelector(".Video-Player-Container")
+        const {videoWidth, videoHeight} = getVideoResponsiveDimension(container, position)
+        this.setState({
+            videoHeight,
+            videoWidth
+        })
     }
     advanceVideo(second) {
         const {currentTime} = this.state
@@ -134,13 +142,10 @@ class VideoContainer extends Component {
         )
     }
     showVideoControls() {
-        const {displayControls, width, height} = this.state
+        const {displayControls} = this.state
         const className = displayControls? `Video-Controls`: `Video-Controls Video-Controls-Hide`;
         return (
-            <div 
-                className={className} 
-                style={{width: width, height: height}}
-                >
+            <div className={className}>
                 {this.videoButtons()}
                 {this.videoProgress()}
                 {this.videoMute()}
@@ -167,20 +172,17 @@ class VideoContainer extends Component {
     }
     render() {
         const {src, videoId} = this.props
-        const {playing, volume, muted, width, height} = this.state
+        const {playing, volume, muted, videoWidth, videoHeight} = this.state
         return (
             <div 
                 className="Video-Container"
                 onClick={() => this.videoContainerClick()}
                 onMouseEnter={() => this.mouseEnter()}
                 onMouseLeave={() => this.mouseLeave()}>
-                <div 
-                    className="Video-Player-Container"
-                    style={{width: width, height: height}}
-                >
+                <div className="Video-Player-Container">
                     <ReactPlayer 
-                        width={width}
-                        height={height}
+                        width={videoWidth}
+                        height={videoHeight}
                         ref={this.ref}
                         playing={playing}
                         muted={muted}

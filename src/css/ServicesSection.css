@@ -1,10 +1,13 @@
 .ServicesSection {
     position: relative;
     z-index: 998;
+    background: url("../img/content/pexels-pixabay-39284.jpg");
+    background-size: cover;
 }
 .ServicesSection-Container {
-    background: #405060;
     min-height: 100%;
+    background: var(--t-dark);
+    backdrop-filter: blur(6px);
 }
 .ServicesSection-Content {
     min-width: 100vw;
@@ -58,14 +61,6 @@
     align-self: center;
 }
 @media (orientation:landscape) and (min-width: 800px) {
-    .ServicesSection {
-        background: url("../img/content/pexels-pixabay-39284.jpg");
-        background-size: cover;
-    }
-    .ServicesSection-Container {
-        background: var(--t-dark);
-        backdrop-filter: blur(6px);
-    }
     .ServicesSection-Service:hover {
         transform: scale(1.1);
         background-color: var(--dark);
