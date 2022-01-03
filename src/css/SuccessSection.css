@@ -54,9 +54,13 @@
     animation-iteration-count: infinite;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
 }
-.SuccessSection-Img-Container img {
+.SuccessSection-Img {
+    width: 100%;
     height: 100%;
-    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/content/pexels-thirdman-7181178.webp");
+    background-size: cover;
 }
 @media (orientation:landscape) {
     .SuccessSection-Content {
@@ -64,6 +68,9 @@
     }
     .SuccessSection-Content img {
         display: none;
+    }
+    .SuccessSection-Img {
+        background-image: url("../img/content/pexels-lukas-669619.webp");
     }
 }
 @media (orientation:landscape) and (min-width: 800px) {
@@ -80,6 +87,12 @@
     .SuccessSection-Img-Container img {
         width: 100%;
         height: auto;
+    }
+}
+@media (min-width: 610px) and (max-width: 800px) {
+    .SuccessSection-Img-Container img {
+        width: auto;
+        height: 100%;
     }
 }
 @keyframes dianaslidein {

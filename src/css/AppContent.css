@@ -3,6 +3,7 @@
 @import url('SuccessSection.css');
 @import url('ServicesSection.css');
 @import url('Clients.css');
+@import url('Contact.css');
 
 .App-Content {
     width: 100vw;

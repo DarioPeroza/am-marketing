@@ -8,28 +8,27 @@ class Features extends Component {
     constructor(props) {
         super(props) 
         this.state = {
-            position: getWindowPosition()
+            position: getWindowPosition(),
+            videoWidth: "auto",
+            videoHeight: "100%",
+            video: verticalVideo
         }
     }
     componentDidMount() {
-        this.setState({
-            position: getWindowPosition()
-        })
+        this.setVideo()
         window.addEventListener("resize", (e) => {
-            this.setState({
-                position: getWindowPosition()
-            })
+            this.setVideo()
         })
     }
-    showVideo() {
-        const {position} = this.state
-        if (position === "landscape") {
-            return <VideoContainer src={horizontalVideo} containerId="App-Content"></VideoContainer>
+    setVideo() {
+        if (getWindowPosition() === "landscape") {
+            this.setState({video: horizontalVideo})
         } else {
-            return <VideoContainer src={verticalVideo} containerId="App-Content"></VideoContainer>
+            this.setState({video: verticalVideo})
         }
     }
     render() {
+        const {video} = this.state
         const {name, firstClass, WhatsappSend} = this.props
         return (
             <div className={`${firstClass} Features`} data-name={name}>
@@ -38,7 +37,10 @@ class Features extends Component {
                 </div>
                 <div className="Features-Img"></div>
                 <div className="Features-Video">
-                    {this.showVideo()}
+                    <VideoContainer 
+                        src={video} 
+                        containerId="App-Content"
+                    />
                 </div>
                 <div className="Features-Content Features-Main-Content">
                     <h2>Marketing de rendimiento</h2>

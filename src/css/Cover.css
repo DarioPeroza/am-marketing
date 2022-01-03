@@ -8,6 +8,12 @@
     background-position: center;
     position: absolute;
     z-index: 1;
+    overflow: hidden;
+}
+.Cover-Video-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .Background-Cover-Color {
     z-index: 2;

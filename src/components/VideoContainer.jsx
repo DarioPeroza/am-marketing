@@ -7,8 +7,9 @@ import advanceSvg from "../img/icons/am-icons_advance.svg";
 import backSvg from "../img/icons/am-icons_back.svg";
 import volumeSvg from "../img/icons/am-icons_volume.svg";
 import muteSvg from "../img/icons/am-icons_mute.svg";
+import getResponsiveVideoDimension from "../helpers/getResponsiveVideoDimension"
+import getWindowPosition from "../helpers/getWindowPosition";
 import "../css/VideoContainer.css";
-
 
 class VideoContainer extends Component {
     constructor(props) {
@@ -22,12 +23,21 @@ class VideoContainer extends Component {
             secondsLoaded: 0,
             loadedPercent: 0,
             timePercent: 0,
-            displayControls: true
+            displayControls: true,
+            height: "100%",
+            width: "auto"
         }
         this.videoId = `v${id}`
     }
     componentWillUnmount() {
         clearInterval(this.videoInterval)
+    }
+    componentDidMount() {
+        this.setVideoDimensions()
+    }
+    setVideoDimensions() {
+        const position = getWindowPosition()
+        const container = document.querySelector(".Video-Container")
     }
     advanceVideo(second) {
         const {currentTime} = this.state
@@ -124,10 +134,13 @@ class VideoContainer extends Component {
         )
     }
     showVideoControls() {
-        const {displayControls} = this.state
+        const {displayControls, width, height} = this.state
         const className = displayControls? `Video-Controls`: `Video-Controls Video-Controls-Hide`;
         return (
-            <div className={className}>
+            <div 
+                className={className} 
+                style={{width: width, height: height}}
+                >
                 {this.videoButtons()}
                 {this.videoProgress()}
                 {this.videoMute()}
@@ -154,22 +167,25 @@ class VideoContainer extends Component {
     }
     render() {
         const {src, videoId} = this.props
-        const {playing, volume, muted} = this.state
+        const {playing, volume, muted, width, height} = this.state
         return (
             <div 
-                className="Video-Container" 
+                className="Video-Container"
                 onClick={() => this.videoContainerClick()}
                 onMouseEnter={() => this.mouseEnter()}
                 onMouseLeave={() => this.mouseLeave()}>
-                <div className="Video-Player-Container">
+                <div 
+                    className="Video-Player-Container"
+                    style={{width: width, height: height}}
+                >
                     <ReactPlayer 
+                        width={width}
+                        height={height}
                         ref={this.ref}
                         playing={playing}
                         muted={muted}
                         volume={volume}
                         className="Video-Player" 
-                        height={""}
-                        width={""}
                         url={src} 
                         id={videoId} 
                         loop={true}>

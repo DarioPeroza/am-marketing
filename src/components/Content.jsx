@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Cover from "./Cover";
+import Contact from "./Contact";
 import Features from "./Features";
 import SuccessSection from "./SuccessSection";
 import ServicesSection from "./ServicesSection";
@@ -33,6 +34,10 @@ class Content extends Component {
                     firstClass="Section" 
                     name="Servicios" 
                     WhatsappSend={(description) => WhatsappSend(description)}
+                />
+                <Contact 
+                    firstClass="Section" 
+                    name="Contacto"
                 />
                 <div onClick={() => WhatsappSend("Necesito saber sobre ")} className="WhatsApp-Fixed-Button">
                     <span>Chat</span>

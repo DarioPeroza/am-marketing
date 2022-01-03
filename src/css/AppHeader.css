@@ -1,5 +1,5 @@
 .App-Header {
-    z-index: 999;
+    z-index: 1000;
     position: fixed;
     width: calc(100vw - var(--default-padding) * 2);
     height: calc(56px - var(--default-padding) * 2);
@@ -18,8 +18,8 @@
 .Header-Title p {
     display: none;
     margin: 0;
-    font-size: .7rem;
-    color: var(--gray);
+    font-size: .8rem;
+    color: var(--light-gray);
     cursor: pointer;
     transition-duration: .1s;
 }
@@ -35,7 +35,7 @@
     width: calc(380px - var(--default-padding) * 2);
     max-width: calc(100vw - var(--default-padding) * 2);
     position: fixed;
-    z-index: 998;
+    z-index: 999;
     top: 0;
     right: 0;
     background-color: var(--dark);
