@@ -7,21 +7,44 @@ import ServicesSection from "./ServicesSection";
 import Clients from "./Clients";
 import whatsappLogo from "../img/icons/am-icons_Whatsapp_Color.svg"
 
+const appId = "App-Content"
+
 class Content extends Component {
-    render() {
-        const {WhatsappSend} = this.props
-        return (
-            <div className="App-Content" id="App-Content">
-                <Cover 
-                    firstClass="Section" 
-                    name="Inicio"
-                    WhatsappSend={(description) => WhatsappSend(description)}
-                    />
+    constructor(props) {
+        super(props)
+        this.state = {
+            windowWidth: window.innerWidth
+        }
+    }
+    componentDidMount() {
+        window.addEventListener("resize", () => {
+            this.setState({windowWidth: window.innerWidth})
+        })
+    }
+    showFeatures() {
+        if (this.state.windowWidth > 800) {
+            const {WhatsappSend} = this.props
+            return (
                 <Features 
                     firstClass="Section" 
                     name="Características"
                     WhatsappSend={(description) => WhatsappSend(description)}
+                    containerId={appId}
                 />
+            )
+        }
+    }
+    render() {
+        const {WhatsappSend} = this.props
+        return (
+            <div className="App-Content" id={appId}>
+                <Cover 
+                    firstClass="Section" 
+                    name="Inicio"
+                    WhatsappSend={(description) => WhatsappSend(description)}
+                    containerId={appId}
+                />
+                {this.showFeatures()}
                 <SuccessSection 
                     firstClass="Section" 
                     name="¿Por qué nosotros?"

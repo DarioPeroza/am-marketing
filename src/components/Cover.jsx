@@ -1,11 +1,10 @@
 import { Component } from "react";
-import logo from "../img/logo.svg";
-import whiteLogo from "../img/whiteLogo.svg";
 import ReactPlayer from "react-player";
 import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm";
 import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm";
 import getWindowPosition from "../helpers/getWindowPosition";
 import getVideoResponsiveDimension from "../helpers/getResponsiveVideoDimension"
+import playSvg from "../img/icons/am-cyan-icons_play.svg"
 
 class Cover extends Component {
     constructor(props) {
@@ -13,22 +12,20 @@ class Cover extends Component {
         this.state = {
             videoWidth: "auto",
             videoHeight: "100%",
-            video: verticalVideo
+            video: verticalVideo,
+            playing: false
         }
     }
     componentDidMount() {
-        this.setVideoDimensions()
-        window.addEventListener("resize", (e) => {
-            this.setVideoDimensions()
+        const container = document.querySelector(".Cover-Video-Container")
+        this.setVideoDimensions(container)
+        window.addEventListener("resize", () => {
+            this.setVideoDimensions(container)
         })
     }
-    setVideoDimensions() {
+    setVideoDimensions(container) {
         const position = getWindowPosition()
         const video = position === "landscape"? horizontalVideo: verticalVideo;
-        const container = {
-            clientHeight: window.innerHeight,
-            clientWidth: window.innerWidth
-        }
         const {videoWidth, videoHeight} = getVideoResponsiveDimension(container, position)
         this.setState({
             position: position,
@@ -37,31 +34,57 @@ class Cover extends Component {
             video
         })
     }
+    swichtPlay() {
+        this.setState({playing: !this.state.playing})
+        const container = document.querySelector(".Cover-Video-Container")
+        this.setVideoDimensions(container)
+    }
+    videoDimensions() {
+        const position = getWindowPosition()
+        if (this.state.playing) {
+            if (position === "portrait") {
+                return {"height": "calc(100vh - 56px)"}
+            } else {
+                return {"right": "0%"}
+            }
+        } 
+        return {}
+    }
+    showTextContainer() {
+        const position = getWindowPosition()
+        if (this.state.playing && position === "landscape") {
+            return {marginLeft: "-75%"}
+        } 
+        return {transitionTimingFunction: "cubic-bezier(0.17, 0.8, 0.88, 0.86)"}
+
+    }
     render() {
         const {name, firstClass, WhatsappSend} = this.props
-        const {videoWidth, videoHeight, video} = this.state
+        const {videoWidth, videoHeight, video, playing} = this.state
         return (
             <div className={`${firstClass} Cover`} data-name={name}>
-                <div className="Background-Cover-Img">
-                    <ReactPlayer 
-                        className="Cover-Video-Container"
-                        url={video}
-                        playing={true}
-                        loop={true}
-                        muted={true}
-                        height={videoHeight}
-                        width={videoWidth}
-                    />
-                </div>
-                <div className="Background-Cover-Color"></div>
                 <div className="Cover-Content">
-                    <div className="Cover-Text">
-                        <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
-                        <span onClick={() => WhatsappSend("¿Cómo invierto en resultados?")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
+                    <div 
+                        className="Cover-Video-Container" 
+                        onClick={() => this.swichtPlay()}
+                        style={this.videoDimensions()}
+                        >
+                        <div className={!playing? "Cover-Video-Play-Button": "Cover-Video-Play-Button-Hide"}>
+                            <img src={playSvg} alt="Play button" />
+                        </div>
+                        <ReactPlayer 
+                            url={video}
+                            playing={playing}
+                            loop={true}
+                            width={videoWidth}
+                            height={videoHeight}
+                            />
                     </div>
-                    <div className="Cover-Img">
-                        <img src={logo} alt="AM-Marketing-Logo"></img>
-                        <img src={whiteLogo} alt="AM-Marketing-Logo"></img>
+                    <div className="Cover-Text-Container" style={this.showTextContainer()}>
+                        <div className="Cover-Text">
+                            <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
+                            <span onClick={() => WhatsappSend("¿Cómo invierto en resultados?")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
+                        </div>
                     </div>
                 </div>
             </div>

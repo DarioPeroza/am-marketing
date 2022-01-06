@@ -47,17 +47,17 @@ class VideoContainer extends Component {
             videoWidth
         })
     }
-    advanceVideo(second) {
+    async advanceVideo(second) {
         const {currentTime} = this.state
         const newTime = currentTime + second < 1? 0: currentTime + second;
         this.setState({currentTime: newTime})
-        this.player.seekTo(newTime)
+        await this.player.seekTo(newTime)
         this.setPercent()
     }
-    setPercent() {
-        const duration = this.player.getDuration()
-        const currentTime = this.player.getCurrentTime()
-        const secondsLoaded = this.player.getSecondsLoaded()
+    async setPercent() {
+        const duration = await this.player.getDuration()
+        const currentTime = await this.player.getCurrentTime()
+        const secondsLoaded = await this.player.getSecondsLoaded()
         const loadedPercent = secondsLoaded / duration * 100
         const timePercent = currentTime / duration * 100
         this.setState({
@@ -92,10 +92,10 @@ class VideoContainer extends Component {
     swichtMute() {
         this.setState({muted: !this.state.muted})
     }
-    moveTime(e) {
+    async moveTime(e) {
         const newPercent = e.target.value
-        const newTime = newPercent * this.player.getDuration() / 100 < 1? 0: newPercent * this.player.getDuration() / 100;
-        this.player.seekTo(newTime)
+        const newTime = await newPercent * this.player.getDuration() / 100 < 1? 0: newPercent * this.player.getDuration() / 100;
+        await this.player.seekTo(newTime)
         this.setState({currentTime: newTime})
         this.setPercent()
     }

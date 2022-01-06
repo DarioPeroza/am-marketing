@@ -29,7 +29,7 @@ class Features extends Component {
     }
     render() {
         const {video} = this.state
-        const {name, firstClass, WhatsappSend} = this.props
+        const {name, firstClass, WhatsappSend, containerId} = this.props
         return (
             <div className={`${firstClass} Features`} data-name={name}>
                 <div className="Features-Title">
@@ -39,7 +39,7 @@ class Features extends Component {
                 <div className="Features-Video">
                     <VideoContainer 
                         src={video} 
-                        containerId="App-Content"
+                        containerId={containerId || "App-Content"}
                     />
                 </div>
                 <div className="Features-Content Features-Main-Content">
