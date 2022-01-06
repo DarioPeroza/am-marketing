@@ -21,7 +21,7 @@ class App extends Component {
   scrollToSection(name) {
     const {content} = this.state
     const position = getSectionsHeight()[name] || 0
-    content.scrollTop = position - 56
+    content.scrollTop = position
     this.setState({content})
     if (this.state.showMenu) {
         this.swichtMenu()
