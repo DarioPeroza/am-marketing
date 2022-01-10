@@ -55,3 +55,18 @@
     padding-right: calc(var(--default-padding) * .5);
     width: auto;
 }
+.Medias-Fixed-Button {
+    z-index: 997;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: calc(100vw - var(--default-padding) * 2);
+    bottom: 0;
+    height: calc(56px - var(--default-padding) * .25);
+    padding: calc(var(--default-padding) * .25) var(--default-padding);
+    background: white;
+}
+.Medias-Fixed-Button img {
+    filter: brightness(.7);
+}

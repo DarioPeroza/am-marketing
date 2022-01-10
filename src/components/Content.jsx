@@ -6,6 +6,11 @@ import SuccessSection from "./SuccessSection";
 import ServicesSection from "./ServicesSection";
 import Clients from "./Clients";
 import whatsappLogo from "../img/icons/am-icons_Whatsapp_Color.svg"
+import whatsappCyanLogo from "../img/icons/am-cyan-icons_Whatsapp.svg"
+import facebookCyanLogo from "../img/icons/am-cyan-icons_Facebook.svg"
+import instagramCyanLogo from "../img/icons/am-cyan-icons_Instagram.svg"
+import cyanCellphoneSvg from "../img/icons/am-cyan-icons_Cellphone.svg"
+import getWindowPosition from "../helpers/getWindowPosition";
 
 const appId = "App-Content"
 
@@ -34,6 +39,43 @@ class Content extends Component {
             )
         }
     }
+    showContact() {
+        if (this.state.windowWidth > 800) {
+            return (
+                <Contact 
+                    firstClass="Section" 
+                    name="Contacto"
+                />
+            )
+        }
+    }
+    goTo(link) {
+        console.log(link);
+        const a = document.createElement("a")
+        a.rel = "nooponer"
+        a.href = link
+        a.click()
+    }
+    showMedias() {
+        const {WhatsappSend} = this.props
+        if (this.state.windowWidth > 800 || getWindowPosition() === "landscape") {
+            return (
+                <div onClick={() => WhatsappSend("Necesito saber sobre ")} className="WhatsApp-Fixed-Button">
+                    <span>Chat</span>
+                    <img src={whatsappLogo} alt="Logo de Whatsapp" />
+                </div>
+            )
+        } else {
+            return (
+                <div className="Medias-Fixed-Button">
+                    <img onClick={() => this.goTo("tel://+584245077692")} src={cyanCellphoneSvg} alt="Teléfono" />
+                    <img onClick={() => this.goTo("https://www.instagram.com/amservice_web/")} src={facebookCyanLogo} alt="Logo de Instagram" />
+                    <img onClick={() => this.goTo("https://www.facebook.com/AMserviceweb/")} src={instagramCyanLogo} alt="Logo de Facebook" />
+                    <img onClick={() => WhatsappSend("Necesito saber sobre ")} src={whatsappCyanLogo} alt="Logo de Whatsapp" />
+                </div>
+            )
+        }
+    }
     render() {
         const {WhatsappSend} = this.props
         return (
@@ -58,14 +100,8 @@ class Content extends Component {
                     name="Servicios" 
                     WhatsappSend={(description) => WhatsappSend(description)}
                 />
-                <Contact 
-                    firstClass="Section" 
-                    name="Contacto"
-                />
-                <div onClick={() => WhatsappSend("Necesito saber sobre ")} className="WhatsApp-Fixed-Button">
-                    <span>Chat</span>
-                    <img src={whatsappLogo} alt="Logo de Whatsapp" />
-                </div>
+                {this.showContact()}
+                {this.showMedias()}
             </div>
         )
     }

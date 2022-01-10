@@ -43,7 +43,7 @@ class Cover extends Component {
         const position = getWindowPosition()
         if (this.state.playing) {
             if (position === "portrait") {
-                return {"height": "calc(100vh - 56px)"}
+                return {"height": "100%"}
             } else {
                 return {"right": "0%"}
             }
@@ -78,6 +78,7 @@ class Cover extends Component {
                             loop={true}
                             width={videoWidth}
                             height={videoHeight}
+                            stopOnUnmount={true}
                             />
                     </div>
                     <div className="Cover-Text-Container" style={this.showTextContainer()}>

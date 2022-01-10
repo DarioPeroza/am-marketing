@@ -1,8 +1,8 @@
 .ServicesSection {
     position: relative;
-    z-index: 998;
     background: url("../img/content/pexels-pixabay-39284.jpg");
     background-size: cover;
+    margin-bottom: 56px;
 }
 .ServicesSection-Container {
     min-height: 100%;
@@ -59,6 +59,11 @@
     width: 160px;
     justify-self: center;
     align-self: center;
+}
+@media (orientation:landscape) {
+    .ServicesSection {
+        margin-bottom: 0;
+    }
 }
 @media (orientation:landscape) and (min-width: 800px) {
     .ServicesSection-Service:hover {

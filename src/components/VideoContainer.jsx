@@ -1,5 +1,4 @@
 import { Component } from "react/cjs/react.production.min";
-import { v4 as uuidv4 } from "uuid";
 import ReactPlayer from "react-player";
 import pauseSvg from "../img/icons/am-icons_pause.svg";
 import playSvg from "../img/icons/am-icons_play.svg";
@@ -14,7 +13,6 @@ import "../css/VideoContainer.css";
 class VideoContainer extends Component {
     constructor(props) {
         super(props)
-        const id = uuidv4()
         this.state = {
             playing: false,
             volume: 0.8,
@@ -27,16 +25,14 @@ class VideoContainer extends Component {
             videoHeight: "100%",
             videoWidth: "auto",
         }
-        this.videoId = `v${id}`
     }
     componentWillUnmount() {
+        window.removeEventListener("resize", this.setVideoDimensions())
         clearInterval(this.videoInterval)
     }
     componentDidMount() {
         this.setVideoDimensions()
-        window.addEventListener("resize", () => {
-            this.setVideoDimensions()
-        })
+        window.addEventListener("resize", this.setVideoDimensions())
     }
     setVideoDimensions() {
         const position = getWindowPosition()
@@ -47,17 +43,17 @@ class VideoContainer extends Component {
             videoWidth
         })
     }
-    async advanceVideo(second) {
+    advanceVideo(second) {
         const {currentTime} = this.state
         const newTime = currentTime + second < 1? 0: currentTime + second;
         this.setState({currentTime: newTime})
-        await this.player.seekTo(newTime)
+        this.player.seekTo(newTime)
         this.setPercent()
     }
-    async setPercent() {
-        const duration = await this.player.getDuration()
-        const currentTime = await this.player.getCurrentTime()
-        const secondsLoaded = await this.player.getSecondsLoaded()
+    setPercent() {
+        const duration = this.player.getDuration()
+        const currentTime = this.player.getCurrentTime()
+        const secondsLoaded = this.player.getSecondsLoaded()
         const loadedPercent = secondsLoaded / duration * 100
         const timePercent = currentTime / duration * 100
         this.setState({
@@ -92,10 +88,10 @@ class VideoContainer extends Component {
     swichtMute() {
         this.setState({muted: !this.state.muted})
     }
-    async moveTime(e) {
+    moveTime(e) {
         const newPercent = e.target.value
-        const newTime = await newPercent * this.player.getDuration() / 100 < 1? 0: newPercent * this.player.getDuration() / 100;
-        await this.player.seekTo(newTime)
+        const newTime = newPercent * this.player.getDuration() / 100 < 1? 0: newPercent * this.player.getDuration() / 100;
+        this.player.seekTo(newTime)
         this.setState({currentTime: newTime})
         this.setPercent()
     }
@@ -171,7 +167,7 @@ class VideoContainer extends Component {
       this.player = player
     }
     render() {
-        const {src, videoId} = this.props
+        const {src} = this.props
         const {playing, volume, muted, videoWidth, videoHeight} = this.state
         return (
             <div 
@@ -188,8 +184,8 @@ class VideoContainer extends Component {
                         muted={muted}
                         volume={volume}
                         className="Video-Player" 
-                        url={src} 
-                        id={videoId} 
+                        url={src}
+                        stopOnUnmount={true}
                         loop={true}>
                     </ReactPlayer>
                 </div>

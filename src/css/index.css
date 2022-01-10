@@ -40,7 +40,7 @@
 }
 html {
   font-size: 16pt;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 html::-webkit-scrollbar {
   width: calc(var(--default-padding) / 2);
@@ -61,4 +61,9 @@ body {
 * {
   animation-timing-function: cubic-bezier(.34,.34,.57,.95);
   animation-duration: .3s;
+}
+@media (min-width: 800px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

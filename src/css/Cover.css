@@ -8,16 +8,14 @@
     height: 100vh;
 }
 .Cover-Content {
-    z-index: 998;
     width: 100vw;
     margin-top: 56px;
-    height: calc(100% - 56px);
+    height: calc(100vh - (56px) * 3);
     position: relative;
-    overflow: hidden;
     background-color: var(--dark-gray);
 }
 .Cover-Video-Container {
-    height: calc((100vh - 56px) / 3 * 2);
+    height: 50%;
     width: 100%;
     overflow: hidden;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
@@ -44,7 +42,7 @@
     opacity: 0;
 }
 .Cover-Text-Container {
-    height: calc((100vh - 56px) / 3 - var(--default-padding) * 2);
+    height: calc(50% - var(--default-padding) * 2);
     padding: var(--default-padding);
     background: var(--dark);
     display: flex;

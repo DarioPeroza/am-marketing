@@ -1,8 +1,5 @@
 import { Component } from "react";
 import getSectionsHeight from "../helpers/getSectionsHeight";
-import instagramLogo from "../img/icons/am-cyan-icons_Instagram.svg"
-import facebookLogo from "../img/icons/am-cyan-icons_Facebook.svg"
-import whatsappLogo from "../img/icons/am-cyan-icons_Whatsapp.svg"
 
 class Header extends Component {
     constructor(props) {
@@ -36,17 +33,6 @@ class Header extends Component {
                 <ul className="Header-Menu-List">
                     {menuList}
                 </ul>
-                <div className="Header-Menu-Social-Medias">
-                    <a rel="noreferrer" href="https://www.instagram.com/amservice_web/">
-                        <img src={instagramLogo} alt="Logo de Instagram" />
-                    </a>
-                    <a rel="noreferrer" href="https://www.facebook.com/AMserviceweb/">
-                        <img src={facebookLogo} alt="Logo de Facebook" />
-                    </a>
-                    <a rel="noreferrer" href="https://api.whatsapp.com/send/?phone=584245077692&text=Quiero%20contratar%20sus%20servicios%20de%20marketing">
-                        <img src={whatsappLogo} alt="Logo de Whatsapp" />
-                    </a>
-                </div>
             </div>
         )
     }

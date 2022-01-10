@@ -7,7 +7,6 @@
     padding: calc(var(--default-padding) * 2) var(--default-padding);
     color: white;
     position: relative;
-    z-index: 998;
 }
 .Contact-Info {
     display: flex;

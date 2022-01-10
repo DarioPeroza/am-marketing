@@ -5,7 +5,6 @@ import getSectionsHeight from "./helpers/getSectionsHeight";
 import './css/normalize.css'
 import './css/App.css';
 
-
 class App extends Component {
   constructor(props) {
     super(props)

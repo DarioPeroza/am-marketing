@@ -1,34 +1,9 @@
 import { Component } from "react";
 import VideoContainer from "./VideoContainer";
-import getWindowPosition from "../helpers/getWindowPosition";
 import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm";
-import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm";
 
 class Features extends Component {
-    constructor(props) {
-        super(props) 
-        this.state = {
-            position: getWindowPosition(),
-            videoWidth: "auto",
-            videoHeight: "100%",
-            video: verticalVideo
-        }
-    }
-    componentDidMount() {
-        this.setVideo()
-        window.addEventListener("resize", (e) => {
-            this.setVideo()
-        })
-    }
-    setVideo() {
-        if (getWindowPosition() === "landscape") {
-            this.setState({video: horizontalVideo})
-        } else {
-            this.setState({video: verticalVideo})
-        }
-    }
     render() {
-        const {video} = this.state
         const {name, firstClass, WhatsappSend, containerId} = this.props
         return (
             <div className={`${firstClass} Features`} data-name={name}>
@@ -38,7 +13,7 @@ class Features extends Component {
                 <div className="Features-Img"></div>
                 <div className="Features-Video">
                     <VideoContainer 
-                        src={video} 
+                        src={horizontalVideo} 
                         containerId={containerId || "App-Content"}
                     />
                 </div>
