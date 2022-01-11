@@ -69,8 +69,8 @@ class Content extends Component {
             return (
                 <div className="Medias-Fixed-Button">
                     <img onClick={() => this.goTo("tel://+584245077692")} src={cyanCellphoneSvg} alt="Teléfono" />
-                    <img onClick={() => this.goTo("https://www.instagram.com/amservice_web/")} src={facebookCyanLogo} alt="Logo de Instagram" />
-                    <img onClick={() => this.goTo("https://www.facebook.com/AMserviceweb/")} src={instagramCyanLogo} alt="Logo de Facebook" />
+                    <img onClick={() => this.goTo("https://www.instagram.com/amservice_web/")} src={instagramCyanLogo} alt="Logo de Instagram" />
+                    <img onClick={() => this.goTo("https://www.facebook.com/AMserviceweb/")} src={facebookCyanLogo} alt="Logo de Facebook" />
                     <img onClick={() => WhatsappSend("Necesito saber sobre ")} src={whatsappCyanLogo} alt="Logo de Whatsapp" />
                 </div>
             )
