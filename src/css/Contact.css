@@ -48,7 +48,7 @@
 }
 @media (orientation: landscape) and (min-width: 800px) {
     .Contact {
-        padding: calc(var(--default-padding) * 2);
+        padding: var(--default-padding) calc(var(--default-padding) * 2);
     }
     .Contact-Info {
         flex-direction: row;

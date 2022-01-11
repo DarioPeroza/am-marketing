@@ -28,6 +28,7 @@
 }*/
 :root {
   --default-padding: 15px;
+  --header-height: 48px;
   --dark-cyan:  #14cdd0;
   --cyan:       #31e9f6;
   --dark-gray:  #212529;

@@ -9,7 +9,7 @@ class ServicesSection extends Component {
             <div className={`${firstClass} ServicesSection`} data-name={name}>
                 <div className="ServicesSection-Container">
                     <div className="ServicesSection-Title">
-                        <h4>Servicios</h4>
+                        <h4>Nuestros servicios</h4>
                     </div>
                     <div className="ServicesSection-Content">
                         <div className="ServicesSection-Service" onClick={() => WhatsappSend("Necesito crear una marca")}>

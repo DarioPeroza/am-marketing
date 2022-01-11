@@ -1,5 +1,5 @@
 .ClientsSection {
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - var(--header-height));
     min-width: 100vw;
     background-image: url("../img/content/pexels-andrea-piacquadio-3760067.jpg");
     background-size: cover;

@@ -9,8 +9,8 @@
 }
 .Cover-Content {
     width: 100vw;
-    margin-top: 56px;
-    height: calc(100vh - (56px) * 3);
+    margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height) * 3);
     position: relative;
     background-color: var(--dark-gray);
 }
@@ -86,7 +86,7 @@
 }
 @media (orientation:landscape) {
     .Cover-Content {
-        height: calc(100vh - 56px);
+        height: calc(100vh - var(--header-height));
     }
     .Cover-Text-Container {
         background: none;
@@ -96,7 +96,7 @@
         background-size: cover;
         padding: 0 calc(var(--default-padding) * 2);
         padding-right: calc(var(--default-padding) * 4);
-        height: calc((100vh - 56px));
+        height: calc((100vh - var(--header-height)));
         display: flex;
         align-items: center;
         position: absolute;
