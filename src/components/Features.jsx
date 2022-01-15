@@ -1,6 +1,6 @@
 import { Component } from "react";
 import VideoContainer from "./VideoContainer";
-import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm";
+import horizontalVideo from "../video/Horizontal-Cover-Video.mp4";
 
 class Features extends Component {
     render() {

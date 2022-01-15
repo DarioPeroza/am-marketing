@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactPlayer from "react-player";
-import horizontalVideo from "../video/pexels-Production-Id-4496268-1.webm";
-import verticalVideo from "../video/pexels-mikhail-nilov-7989667.webm";
+import horizontalVideo from "../video/Horizontal-Cover-Video.mp4";
+import verticalVideo from "../video/Vertical-Cover-Video.mp4";
 import getWindowPosition from "../helpers/getWindowPosition";
 import getVideoResponsiveDimension from "../helpers/getResponsiveVideoDimension"
 import playSvg from "../img/icons/am-cyan-icons_play.svg"
