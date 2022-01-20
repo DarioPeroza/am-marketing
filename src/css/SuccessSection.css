@@ -1,6 +1,5 @@
 .SuccessSection {
-    width: 100vw;
-    max-width: 100vw;
+    min-width: 100vw;
     max-height: 100vh;
     overflow: hidden;
     height: 100%;
@@ -30,6 +29,7 @@
     margin: 0;
     font-family: 'Inter-Ligth';
     line-height: 1.3rem;
+    margin-bottom: var(--default-padding);
 }
 .SuccessSection-Content img {
     width: 50%;

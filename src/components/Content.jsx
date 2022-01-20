@@ -90,6 +90,7 @@ class Content extends Component {
                 <SuccessSection 
                     firstClass="Section" 
                     name="¿Por qué nosotros?"
+                    WhatsappSend={(description) => WhatsappSend(description)}
                 />
                 <Clients 
                     firstClass="Section" 
