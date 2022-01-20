@@ -1,6 +1,7 @@
 import { Component } from "react";
 import VideoContainer from "./VideoContainer";
 import horizontalVideo from "../video/Horizontal-Cover-Video.mp4";
+import whatsappLogo from "../img/icons/am-icons_Whatsapp.svg"
 
 class Features extends Component {
     render() {
@@ -20,7 +21,13 @@ class Features extends Component {
                 <div className="Features-Content Features-Main-Content">
                     <h2>Marketing de rendimiento</h2>
                     <p>Cada empresa es única y diferente, y en AM Marketing Digital entendemos eso. Es por esto que adaptamos el presupuesto a tus necesidades y objetivos a fin de que obtengas campañas efectivas y rentables.</p>
-                    <div className="WhatsApp-Button" onClick={() => WhatsappSend("Necesito una campaña publicitaria")}>Haz una campaña</div>
+                    <div 
+                        className="WhatsApp-Button" 
+                        onClick={() => WhatsappSend("Necesito una campaña publicitaria")}
+                        >
+                        <img src={whatsappLogo} alt="Logo de Whatsapp"/>
+                        Haz una campaña
+                    </div>
                 </div>
                 <div className="Features-Content">
                     <h3>Marketing basado en objetivos</h3>

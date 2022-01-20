@@ -22,6 +22,25 @@
     color: var(--dark);
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.WhatsApp-Button img {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: calc(var(--default-padding) / 2);
+    height: 40px;
+    filter: brightness(.07);
+    width: auto;
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
+    transition-duration: .2s;
+}
+.WhatsApp-Button:hover img {
+    animation-name: rotateWhatsappLogo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
 }
 .WhatsApp-Button:hover {
     color: white;
@@ -46,6 +65,12 @@
 .WhatsApp-Fixed-Button img{
     height: 100%;
     width: auto;
+}
+.WhatsApp-Fixed-Button:hover img{
+    animation-name: rotateWhatsappLogo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition-timing-function: cubic-bezier(.34,.34,.57,.95);
 }
 .WhatsApp-Fixed-Button span{
     height: auto;
@@ -72,4 +97,15 @@
     filter: brightness(.7);
     height: 80%;
     width: auto;
+}
+@keyframes rotateWhatsappLogo {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(25deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
 }
