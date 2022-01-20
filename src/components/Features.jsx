@@ -20,22 +20,22 @@ class Features extends Component {
                 </div>
                 <div className="Features-Content Features-Main-Content">
                     <h2>Marketing de rendimiento</h2>
-                    <p>Cada empresa es única y diferente, y en AM Marketing Digital entendemos eso. Es por esto que adaptamos el presupuesto a tus necesidades y objetivos a fin de que obtengas campañas efectivas y rentables.</p>
+                    <p>Lleve su consultorio al siguiente nivel. Gestionamos sus campañas de publicidad basándonos en su especialidad médica, y objetivos que requiera.</p>
                     <div 
                         className="WhatsApp-Button" 
                         onClick={() => WhatsappSend("Necesito una campaña publicitaria")}
                         >
                         <img src={whatsappLogo} alt="Logo de Whatsapp"/>
-                        Haz una campaña
+                        ¡Escríbenos, ya!
                     </div>
+                </div>
+                <div className="Features-Content">
+                    <h3>Mejor organización</h3>
+                    <p>Organiza de manera sencilla y detallada a tus pacientes. Agenda visitas médicas, y protege información delicada</p>
                 </div>
                 <div className="Features-Content">
                     <h3>Marketing basado en objetivos</h3>
                     <p>Nos basamos en objetivos para un tiempo determinado, preparamos estrategias completas para cada área digital de su empresa, y alcanzar tu objetivo.</p>
-                </div>
-                <div className="Features-Content">
-                    <h3>Asistencia profesional</h3>
-                    <p>Profesionales con años de experiencia, para realizar tu proyecto y darte asesoramiento.</p>
                 </div>
             </div>
         )

@@ -83,8 +83,8 @@ class Cover extends Component {
                     </div>
                     <div className="Cover-Text-Container" style={this.showTextContainer()}>
                         <div className="Cover-Text">
-                            <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
-                            <span onClick={() => WhatsappSend("¿Cómo invierto en resultados?")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
+                            <h1 className="Cover-Title"><strong>¡</strong>Consigue más pacientes<strong>!</strong></h1>
+                            <span onClick={() => WhatsappSend("Deseo saber más sobre sus servicios para trabajadores sanitarios")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
                         </div>
                     </div>
                 </div>

@@ -90,15 +90,16 @@
     }
     .Cover-Text-Container {
         background: none;
-        background-image: url("../img/content/cover-background.svg");
+        background-image: url("../img/content/Doctor-Cover.png");
         background-position: right;
         background-repeat: no-repeat;
         background-size: cover;
         padding: 0 calc(var(--default-padding) * 2);
-        padding-right: calc(var(--default-padding) * 4);
+        padding-right: calc(var(--default-padding) * 8);
         height: calc((100vh - var(--header-height)));
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         position: absolute;
         top: 0;
         width: calc(70% - var(--default-padding) * 6);
@@ -107,9 +108,11 @@
         margin-left: -10%;
     }
     .Cover-Text {
-        padding: 0 calc(var(--default-padding) * 2);
+        background: var(--t-dark);
+        padding: var(--default-padding) calc(var(--default-padding) * 2);
         height: auto;
         width: auto;
+        max-width: calc(100% - var(--default-padding) * 14);
     }
     .Cover-Video-Container {
         position: absolute;
