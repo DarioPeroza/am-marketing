@@ -13,7 +13,7 @@
     "webpage",
     "landing page"
   ],
-  "homepage": "https://dev.am-marketingdigital.com",
+  "homepage": "https://am-marketingdigital.com/doctors",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
