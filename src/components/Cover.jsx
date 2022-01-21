@@ -47,16 +47,21 @@ class Cover extends Component {
             } else {
                 return {"right": "0%"}
             }
-        } 
+        }
         return {}
     }
     showTextContainer() {
         const position = getWindowPosition()
         if (this.state.playing && position === "landscape") {
-            return {marginLeft: "-75%"}
+            return {marginLeft: "-80%"}
         } 
         return {transitionTimingFunction: "cubic-bezier(0.17, 0.8, 0.88, 0.86)"}
-
+    }
+    showVideoBackground() {
+        const position = getWindowPosition()
+        if (position === "landscape" && !this.state.playing) {
+            return <div className="Video-Cover-Background"/>
+        }
     }
     render() {
         const {name, firstClass, WhatsappSend} = this.props
@@ -72,6 +77,7 @@ class Cover extends Component {
                         <div className={!playing? "Cover-Video-Play-Button": "Cover-Video-Play-Button-Hide"}>
                             <img src={playSvg} alt="Play button" />
                         </div>
+                        {this.showVideoBackground()}
                         <ReactPlayer 
                             url={video}
                             playing={playing}

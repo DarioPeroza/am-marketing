@@ -23,10 +23,17 @@
     background-color: var(--dark-gray);
     cursor: pointer;
 }
+.Video-Cover-Background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: var(--t-dark);
+}
 .Cover-Video-Play-Button {
     width: 140px;
     height: 140px;
     position: absolute;
+    z-index: 2;
     transition-timing-function: cubic-bezier(.34,.34,.57,.95);
     transition-duration: .2s;
 }
