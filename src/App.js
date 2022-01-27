@@ -13,10 +13,16 @@ class App extends Component {
       content: {}
     }
     this.scrollToSection = this.scrollToSection.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("hashchange", this.handleScroll)
   }
   componentDidMount() {
     const content = document.querySelector("html")
     this.setState({content})
+    window.onload = this.handleScroll
+    window.addEventListener("hashchange", this.handleScroll)
   }
   scrollToSection(name) {
     const {content} = this.state
@@ -31,7 +37,14 @@ class App extends Component {
     content.scrollTo(0, position)
     this.setState({content})
     if (this.state.showMenu) {
-        this.swichtMenu()
+      this.swichtMenu()
+    }
+  }
+  handleScroll() {
+    const {href} = window.location
+    if (href.includes("#")) {
+      const section = href.substring(href.indexOf("#") + 1, href.length)
+      this.scrollToSection(section)
     }
   }
   WhatsappSend(description) {
