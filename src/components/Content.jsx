@@ -31,6 +31,7 @@ class Content extends Component {
             const {WhatsappSend} = this.props
             return (
                 <Features 
+                    id="caracteristicas"
                     firstClass="Section" 
                     name="Características"
                     WhatsappSend={(description) => WhatsappSend(description)}
@@ -82,21 +83,25 @@ class Content extends Component {
             <div className="App-Content" id={appId}>
                 <Cover 
                     firstClass="Section" 
+                    id="inicio"
                     name="Inicio"
                     WhatsappSend={(description) => WhatsappSend(description)}
                     containerId={appId}
-                />
+                    />
                 {this.showFeatures()}
                 <SuccessSection 
+                    id="que-nos-destaca"
                     firstClass="Section" 
                     name="¿Por qué nosotros?"
                     WhatsappSend={(description) => WhatsappSend(description)}
                 />
                 <Clients 
+                    id="opiniones"
                     firstClass="Section" 
                     name="Opiniones"
                 />
                 <ServicesSection 
+                    id="servicios"
                     firstClass="Section" 
                     name="Servicios" 
                     WhatsappSend={(description) => WhatsappSend(description)}
