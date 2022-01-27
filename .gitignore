@@ -9,7 +9,12 @@
 /coverage
 
 # production
+/productions
 /build
+
+#medias
+src/img
+src/video
 
 # misc
 .DS_Store
