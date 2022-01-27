@@ -4,9 +4,9 @@ import whatsappLogo from "../img/icons/am-icons_Whatsapp.svg"
 
 class SuccessSection extends Component {
     render() {
-        const {name, firstClass, WhatsappSend} = this.props
+        const {id, name, firstClass, WhatsappSend} = this.props
         return (
-            <div className={`${firstClass} SuccessSection`} data-name={name}>
+            <div id={id} className={`${firstClass} SuccessSection`} data-name={name}>
                 <div className="SuccessSection-Content">
                     <img src={sniper} alt="Icono de mira"></img>
                     <h2>Planea tus objetivos</h2>

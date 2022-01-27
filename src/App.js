@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Header from './components/Header';
 import Content from './components/Content'
 import getSectionsHeight from "./helpers/getSectionsHeight";
+import getValidString from "./helpers/getValidString"
 import './css/normalize.css'
 import './css/App.css';
 
@@ -19,8 +20,15 @@ class App extends Component {
   }
   scrollToSection(name) {
     const {content} = this.state
-    const position = getSectionsHeight()[name] || 0
-    content.scrollTop = position
+    const validName = getValidString(name)
+    const preSections = getSectionsHeight()
+    const sections = {}
+    for (const key in preSections) {
+      const validKey = getValidString(key)
+      sections[validKey] = preSections[key]
+    }
+    const position = sections[validName] || 0
+    content.scrollTo(0, position)
     this.setState({content})
     if (this.state.showMenu) {
         this.swichtMenu()
@@ -41,7 +49,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header scrollToSection={(e) => this.scrollToSection(e)} WhatsappSend={(description) => this.WhatsappSend(description)} />
-        <Content scrollToSection={(e) => this.scrollToSection(e)} WhatsappSend={(description) => this.WhatsappSend(description)} />
+        <Content getValidString={getValidString} scrollToSection={(e) => this.scrollToSection(e)} WhatsappSend={(description) => this.WhatsappSend(description)} />
       </div>
     );
   }

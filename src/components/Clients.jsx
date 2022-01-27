@@ -43,10 +43,10 @@ class Clients extends Component {
         })
     }
     render() {
-        const {name, firstClass} = this.props
+        const {name, firstClass, id} = this.props
         const {currentClientCard} = this.state
         return (
-            <div className={`${firstClass} ClientsSection`} data-name={name}>
+            <div id={id} className={`${firstClass} ClientsSection`} data-name={name}>
                 <div className="Client-Card">
                     <div className="Client-Logo">
                         {clientsImg[currentClientCard]}

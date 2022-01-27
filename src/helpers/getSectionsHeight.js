@@ -1,5 +1,5 @@
-export default function getSectionsHeight(className = ".Section") {
-    const docSections = document.querySelectorAll(".Section")
+export default function getSectionsHeight(className = "Section") {
+    const docSections = document.querySelectorAll("." + className)
     let totalHeight = 0
     const sections = {}
     docSections.forEach(section => {

@@ -59,10 +59,10 @@ class Cover extends Component {
 
     }
     render() {
-        const {name, firstClass, WhatsappSend} = this.props
+        const {name, firstClass, WhatsappSend, id} = this.props
         const {videoWidth, videoHeight, video, playing} = this.state
         return (
-            <div className={`${firstClass} Cover`} data-name={name}>
+            <div id={id} className={`${firstClass} Cover`} data-name={name}>
                 <div className="Cover-Content">
                     <div 
                         className="Cover-Video-Container" 
