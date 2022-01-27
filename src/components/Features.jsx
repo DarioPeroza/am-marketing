@@ -5,9 +5,9 @@ import whatsappLogo from "../img/icons/am-icons_Whatsapp.svg"
 
 class Features extends Component {
     render() {
-        const {name, firstClass, WhatsappSend, containerId} = this.props
+        const {id, name, firstClass, WhatsappSend, containerId} = this.props
         return (
-            <div className={`${firstClass} Features`} data-name={name}>
+            <div id={id} className={`${firstClass} Features`} data-name={name}>
                 <div className="Features-Title">
                     <h2><strong>¿Quieres resultados?</strong><span> Invierte con nosotros de forma segura</span></h2>
                 </div>

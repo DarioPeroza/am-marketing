@@ -59,7 +59,7 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../img/content/pexels-thirdman-7181178.webp");
+    background-image: url("../img/content/pexels-thirdman-7181178.jpg");
     background-size: cover;
 }
 @media (orientation:landscape) {
@@ -70,7 +70,7 @@
         display: none;
     }
     .SuccessSection-Img {
-        background-image: url("../img/content/pexels-lukas-669619.webp");
+        background-image: url("../img/content/pexels-lukas-669619.jpg");
     }
 }
 @media (orientation:landscape) and (min-width: 800px) {

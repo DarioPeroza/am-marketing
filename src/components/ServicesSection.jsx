@@ -4,9 +4,9 @@ import secondService from "../img/icons/am-icons_scale.svg"
 import thirdService from "../img/icons/am-icons_filter.svg"
 class ServicesSection extends Component {
     render() {
-        const {name, firstClass, WhatsappSend} = this.props
+        const {name, id, firstClass, WhatsappSend} = this.props
         return (
-            <div className={`${firstClass} ServicesSection`} data-name={name}>
+            <div id={id} className={`${firstClass} ServicesSection`} data-name={name}>
                 <div className="ServicesSection-Container">
                     <div className="ServicesSection-Title">
                         <h4>Nuestros servicios</h4>

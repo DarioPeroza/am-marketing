@@ -21,7 +21,20 @@ class Content extends Component {
             windowWidth: window.innerWidth
         }
     }
+    componentWillUnmount() {
+
+    }
     componentDidMount() {
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const {href} = window.location
+                const {scrollToSection} = this.props
+                if (href.includes("#")) {
+                    const section = href.substring(href.indexOf("#") + 1, href.length)
+                    scrollToSection(section)
+                }
+            }, 1000)
+        });
         window.addEventListener("resize", () => {
             this.setState({windowWidth: window.innerWidth})
         })
@@ -51,7 +64,6 @@ class Content extends Component {
         }
     }
     goTo(link) {
-        console.log(link);
         const a = document.createElement("a")
         a.rel = "nooponer"
         a.href = link
@@ -92,7 +104,7 @@ class Content extends Component {
                 <SuccessSection 
                     id="que-nos-destaca"
                     firstClass="Section" 
-                    name="¿Por qué nosotros?"
+                    name="Que nos destaca"
                     WhatsappSend={(description) => WhatsappSend(description)}
                 />
                 <Clients 
