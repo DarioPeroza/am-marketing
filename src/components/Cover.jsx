@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactPlayer from "react-player";
-import horizontalVideo from "../video/Horizontal-Doctors-Cover-Video.mp4";
-import verticalVideo from "../video/Vertical-Doctors-Cover-Video.mp4";
+import horizontalVideo from "../video/Horizontal-Cover-Video.mp4";
+import verticalVideo from "../video/Vertical-Cover-Video.mp4";
 import getWindowPosition from "../helpers/getWindowPosition";
 import getVideoResponsiveDimension from "../helpers/getResponsiveVideoDimension"
 import playSvg from "../img/icons/am-cyan-icons_play.svg"
@@ -22,6 +22,9 @@ class Cover extends Component {
         window.addEventListener("resize", () => {
             this.setVideoDimensions(container)
         })
+        window.onscroll = () => {
+            this.setState({playing: false})
+        }
     }
     setVideoDimensions(container) {
         const position = getWindowPosition()
@@ -47,21 +50,16 @@ class Cover extends Component {
             } else {
                 return {"right": "0%"}
             }
-        }
+        } 
         return {}
     }
     showTextContainer() {
         const position = getWindowPosition()
         if (this.state.playing && position === "landscape") {
-            return {marginLeft: "-80%"}
+            return {marginLeft: "-75%"}
         } 
         return {transitionTimingFunction: "cubic-bezier(0.17, 0.8, 0.88, 0.86)"}
-    }
-    showVideoBackground() {
-        const position = getWindowPosition()
-        if (position === "landscape" && !this.state.playing) {
-            return <div className="Video-Cover-Background"/>
-        }
+
     }
     render() {
         const {name, firstClass, WhatsappSend, id} = this.props
@@ -77,11 +75,10 @@ class Cover extends Component {
                         <div className={!playing? "Cover-Video-Play-Button": "Cover-Video-Play-Button-Hide"}>
                             <img src={playSvg} alt="Play button" />
                         </div>
-                        {this.showVideoBackground()}
                         <ReactPlayer 
+                            onEnded={() => this.swichtPlay()}
                             url={video}
                             playing={playing}
-                            loop={true}
                             width={videoWidth}
                             height={videoHeight}
                             stopOnUnmount={true}
@@ -89,8 +86,8 @@ class Cover extends Component {
                     </div>
                     <div className="Cover-Text-Container" style={this.showTextContainer()}>
                         <div className="Cover-Text">
-                            <h1 className="Cover-Title"><strong>¡</strong>Consigue más pacientes<strong>!</strong></h1>
-                            <span onClick={() => WhatsappSend("Deseo saber más sobre sus servicios para trabajadores sanitarios")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
+                            <h1 className="Cover-Title"><strong>¡</strong>Invierte en resultados<strong>!</strong></h1>
+                            <span onClick={() => WhatsappSend("¿Cómo invierto en resultados?")} className="Cover-Link"><p>Más información<strong>{" >>>"}</strong></p></span>
                         </div>
                     </div>
                 </div>
