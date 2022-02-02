@@ -185,8 +185,8 @@ class VideoContainer extends Component {
                         volume={volume}
                         className="Video-Player" 
                         url={src}
-                        stopOnUnmount={true}
-                        loop={true}>
+                        onEnded={() => this.swichtPlayPause()}
+                        stopOnUnmount={true}>
                     </ReactPlayer>
                 </div>
                 {this.showVideoControls()}

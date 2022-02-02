@@ -22,6 +22,9 @@ class Cover extends Component {
         window.addEventListener("resize", () => {
             this.setVideoDimensions(container)
         })
+        window.onscroll = () => {
+            this.setState({playing: false})
+        }
     }
     setVideoDimensions(container) {
         const position = getWindowPosition()
@@ -73,9 +76,9 @@ class Cover extends Component {
                             <img src={playSvg} alt="Play button" />
                         </div>
                         <ReactPlayer 
+                            onEnded={() => this.swichtPlay()}
                             url={video}
                             playing={playing}
-                            loop={true}
                             width={videoWidth}
                             height={videoHeight}
                             stopOnUnmount={true}
