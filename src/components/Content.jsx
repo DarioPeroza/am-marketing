@@ -12,7 +12,33 @@ import instagramCyanLogo from "../img/icons/am-cyan-icons_Instagram.svg"
 import cyanCellphoneSvg from "../img/icons/am-cyan-icons_Cellphone.svg"
 import getWindowPosition from "../helpers/getWindowPosition";
 
-const appId = "App-Content"
+const ids = {
+    mainId: "App-Content",
+    features: {
+        id: "que-nos-destaca",
+        name: "Que nos destaca",
+    },
+    contact: {
+        id: "contact",
+        name: "Contacto",
+    },
+    cover: {
+        id: "inicio",
+        name: "Inicio",
+    },
+    successSection: {
+        id: "objetivos",
+        name: "Objetivos",
+    },
+    clients: {
+        id: "opiniones",
+        name: "Opiniones",
+    },
+    servicesSection: {
+        id: "servicios",
+        name: "Servicios",
+    },
+}
 
 class Content extends Component {
     constructor(props) {
@@ -31,11 +57,11 @@ class Content extends Component {
             const {WhatsappSend} = this.props
             return (
                 <Features 
-                    id="caracteristicas"
+                    id={ids.features.id}
+                    name={ids.features.name}
                     firstClass="Section" 
-                    name="Características"
                     WhatsappSend={(description) => WhatsappSend(description)}
-                    containerId={appId}
+                    containerId={ids.mainId}
                 />
             )
         }
@@ -45,7 +71,8 @@ class Content extends Component {
             return (
                 <Contact 
                     firstClass="Section" 
-                    name="Contacto"
+                    name={ids.contact.name}
+                    id={ids.contact.id}
                 />
             )
         }
@@ -79,30 +106,30 @@ class Content extends Component {
     render() {
         const {WhatsappSend} = this.props
         return (
-            <div className="App-Content" id={appId}>
+            <div className="App-Content" id={ids.mainId}>
                 <Cover 
                     firstClass="Section" 
-                    id="inicio"
-                    name="Inicio"
+                    id={ids.cover.id}
+                    name={ids.cover.name}
                     WhatsappSend={(description) => WhatsappSend(description)}
-                    containerId={appId}
+                    containerId={ids.mainId}
                     />
                 {this.showFeatures()}
                 <SuccessSection 
-                    id="que-nos-destaca"
+                    id={ids.successSection.id}
+                    name={ids.successSection.name}
                     firstClass="Section" 
-                    name="Que nos destaca"
                     WhatsappSend={(description) => WhatsappSend(description)}
                 />
                 <Clients 
-                    id="opiniones"
+                    id={ids.clients.id}
+                    name={ids.clients.name}
                     firstClass="Section" 
-                    name="Opiniones"
                 />
                 <ServicesSection 
-                    id="servicios"
+                    id={ids.servicesSection.id}
+                    name={ids.servicesSection.name}
                     firstClass="Section" 
-                    name="Servicios" 
                     WhatsappSend={(description) => WhatsappSend(description)}
                 />
                 {this.showContact()}
