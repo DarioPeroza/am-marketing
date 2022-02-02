@@ -1,6 +1,6 @@
 import { Component } from "react";
 import VideoContainer from "./VideoContainer";
-import horizontalVideo from "../video/Horizontal-Cover-Video.mp4";
+import horizontalVideo from "../video/Horizontal-Doctors-Cover-Video.mp4";
 import whatsappLogo from "../img/icons/am-icons_Whatsapp.svg"
 
 class Features extends Component {
